@@ -39,23 +39,23 @@ export const pages: Record<RouteType, Record<string, Page>> = {
   protected: {
     dashboard: {
       label: "Dashboard",
-      url: "/dash",
+      url: "/admin",
     },
     manageEvents: {
       label: "Manage Events",
-      url: "/dash/events",
+      url: "/admin/events",
     },
     manageAnnouncements: {
       label: "Manage Announcements",
-      url: "/dash/announcements",
+      url: "/admin/announcements",
     },
     manageSponsors: {
       label: "Manage Sponsors",
-      url: "/dash/sponsors",
+      url: "/admin/sponsors",
     },
     manageUsers: {
       label: "Manage Users",
-      url: "/dash/users",
+      url: "/admin/users",
     },
   },
 };

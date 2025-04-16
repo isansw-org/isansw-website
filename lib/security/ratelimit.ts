@@ -7,6 +7,8 @@ so we would need an intermediary storage such as Redis
 to store ratelimit states
 */
 
+import { timeToReadableFormat } from "../utils/datetime";
+
 export type RateLimitActionOptions = "SignIn";
 
 type RateLimitData = {
@@ -14,11 +16,11 @@ type RateLimitData = {
   time: number;
 };
 
-// Predefined configuration for known keys.
-// Customize these values or add new keys as needed.
-const rateLimitConfig: Record<string, { maxTries: number; limit: number }> = {
-  myFormSubmit: { maxTries: 5, limit: 15000 }, // e.g. 3 tries per 1 minute
-  // add more keys and their corresponding settings here
+const rateLimitConfig: Record<
+  RateLimitActionOptions,
+  { maxTries: number; limit: number }
+> = {
+  SignIn: { maxTries: 5, limit: 60000 },
 };
 
 // Fallback default configuration if a key is not defined.
@@ -72,29 +74,23 @@ export function rateLimit(key: RateLimitActionOptions): boolean {
   return false;
 }
 
+export function rateLimitExceeded(key: RateLimitActionOptions): boolean {
+  return !rateLimit(key);
+}
+
 /**
- * Checks the rate limit for a given key and, if the action is rate limited,
- * executes the provided callback with an object containing `timeLeft` (in milliseconds)
- * until the action is allowed again.
+ * Returns the amount of time (in milliseconds) left until the action is allowed again.
  *
- * The client API simply calls onRateLimit(key, callback). If the action is allowed,
- * nothing happens. If not allowed, the callback is invoked.
+ * If there is no active rate limit (or if the period has expired), 0 is returned.
  *
  * @param key Unique identifier for the action.
- * @param callback Function to execute when the rate limit has been reached.
- *                 Receives an object: { timeLeft: number }.
+ * @returns The time left (in ms) until the action becomes available, or 0 if no rate limiting applies.
  */
-export function onRateLimit(
-  key: RateLimitActionOptions,
-  callback: (state: { timeLeft: number }) => void
-): void {
-  if (typeof window === "undefined" || !window.localStorage) return;
+export function rateLimit_timeLeft(key: RateLimitActionOptions): number {
+  if (typeof window === "undefined" || !window.localStorage) {
+    return 0;
+  }
 
-  // If the rateLimit check allows the action, do nothing.
-  const allowed = rateLimit(key);
-  if (allowed) return;
-
-  // Otherwise, get the configuration and calculate how much time remains.
   const config = rateLimitConfig[key] || DEFAULT_CONFIG;
   const storageKey = `rateLimit-${key}`;
   const storedData = window.localStorage.getItem(storageKey);
@@ -109,9 +105,17 @@ export function onRateLimit(
     data = null;
   }
 
-  if (data && now - data.time < config.limit) {
-    const timeLeft = config.limit - (now - data.time);
-
-    callback({ timeLeft });
+  if (!data || now - data.time >= config.limit) {
+    // No active rate-limit
+    return 0;
   }
+
+  return config.limit - (now - data.time);
+}
+
+export function rateLimit_defaultErrorMessage(
+  key: RateLimitActionOptions
+): string {
+  const timeLeft = timeToReadableFormat(rateLimit_timeLeft(key));
+  return `Too many attempts. Please try again in ${timeLeft}`;
 }

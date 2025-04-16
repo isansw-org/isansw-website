@@ -10,7 +10,7 @@ export const Center = ({ children, className, id }: CenterProps) => {
   return (
     <div
       id={id}
-      className={cn("flex justify-center items-center h-screen", className)}
+      className={cn("flex justify-center items-center min-h-screen", className)}
     >
       {children}
     </div>

@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
+import { Toaster } from "sonner";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -12,11 +13,13 @@ const geistMono = Geist_Mono({
   subsets: ["latin"],
 });
 
-// IMPORTANT: DO NOT DELETE METADATA
-// This is useful for SEO.
+// ------------------------------------------------------------------------------
+// THIS METADATA CONFIGURATION IS IMPORTANT FOR SEARCH ENGINE OPTIMIZATION
+// ------------------------------------------------------------------------------
 export const metadata: Metadata = {
   title: "ISANSW | Indonesian Student Association New South Wales",
-  description: "ISANSW is a non-profit organization that serves the NSW chapter of Perhimpunan Pelajar Indonesia Australia (PPIA), the Indonesian Students' Association of Australia.",
+  description:
+    "ISANSW is a non-profit organization that serves the NSW chapter of Perhimpunan Pelajar Indonesia Australia (PPIA), the Indonesian Students' Association of Australia.",
 };
 
 export default function RootLayout({
@@ -29,6 +32,7 @@ export default function RootLayout({
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
+        <Toaster position="top-center" richColors />
         {children}
       </body>
     </html>

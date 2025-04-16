@@ -11,7 +11,7 @@ export const FormSection = ({ children, className, id }: Props) => {
   return (
     <section
       id={id}
-      className={cn("p-8 border-2 shadow-lg rounded-lg", className)}
+      className={cn("p-8 border border-black shadow-lg rounded-lg", className)}
     >
       {children}
     </section>

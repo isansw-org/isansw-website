@@ -1,5 +1,4 @@
 import { cn } from "@/lib/utils/cn";
-import { ReactNode } from "react";
 
 type Props = {
   className?: string;
@@ -11,7 +10,10 @@ type Props = {
 export const FormHeader = ({ title, description, className, id }: Props) => {
   return (
     <div className="space-y-2">
-      <h2 id={id} className={cn("text-3xl font-bold", className)}>
+      <h2
+        id={id}
+        className={cn("flex gap-2 items-center text-3xl font-bold", className)}
+      >
         {title}
       </h2>
       <p className="text-lg text-muted-foreground">{description}</p>

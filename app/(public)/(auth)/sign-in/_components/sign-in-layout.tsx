@@ -1,5 +1,5 @@
 import { Center } from "@/components/common/whitespacing";
-import { FormHeader, FormSection } from "@/components/form";
+import { FormOuterNav } from "@/components/form";
 import { ReactNode } from "react";
 
 type Props = {
@@ -9,13 +9,10 @@ type Props = {
 export const SignInLayout = ({ children }: Props) => {
   return (
     <Center>
-      <FormSection>
-        <FormHeader
-          title="Sign In"
-          description="Enter your credentials below."
-        />
-        <div className="mt-4">{children}</div>
-      </FormSection>
+      <div className="my-24 grid space-y-12 w-full md:max-w-lg max-w-md">
+        <FormOuterNav returnUrl="/" returnPageLabel="Home" />
+        {children}
+      </div>
     </Center>
   );
 };

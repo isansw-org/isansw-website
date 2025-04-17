@@ -6,7 +6,10 @@
     "dev": "next dev --turbopack",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "withenv": "env $(cat .env.local)",
+    "drizzle-kit": "npm run withenv drizzle-kit",
+    "lint": "npm run withenv eslint .",
+    "lint-fix": "npm run withenv eslint --fix"
   },
   "dependencies": {
     "@hookform/resolvers": "^5.0.1",

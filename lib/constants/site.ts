@@ -1,11 +1,4 @@
-type RouteType = "protected" | "public";
-
-type Page = {
-  label: string;
-  url: string;
-};
-
-export const pages: Record<RouteType, Record<string, Page>> = {
+export const pages = {
   public: {
     home: {
       label: "Home",

@@ -48,7 +48,7 @@ export function AdminSidebar({
   ...props
 }: React.ComponentProps<typeof Sidebar>) {
   return (
-    <Sidebar {...props} className="border-neutral-600">
+    <Sidebar {...props} className="border-neutral-600 bg-black">
       <SidebarHeader className="mt-4 mx-2">
         <h1 className="font-bold text-2xl">ISANSW</h1>
         <p className="text-md">Administrative Panel</p>

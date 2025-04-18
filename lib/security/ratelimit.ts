@@ -9,7 +9,7 @@ to store ratelimit states
 
 import { timeToReadableFormat } from "../utils/datetime";
 
-export type RateLimitActionOptions = "SignIn";
+export type RateLimitActionOptions = "SignIn" | "InviteUser";
 
 type RateLimitData = {
   count: number;
@@ -21,6 +21,7 @@ const rateLimitConfig: Record<
   { maxTries: number; limit: number }
 > = {
   SignIn: { maxTries: 5, limit: 60000 },
+  InviteUser: { maxTries: 5, limit: 15000 },
 };
 
 // Fallback default configuration if a key is not defined.

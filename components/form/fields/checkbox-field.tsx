@@ -41,10 +41,7 @@ export function CheckboxField({
                 id={name}
                 checked={field.value}
                 onCheckedChange={field.onChange}
-                className={cn(
-                  "border-black",
-                  fieldState?.invalid && "border-red-500"
-                )}
+                className={cn(fieldState?.invalid && "border-red-500")}
               />
               <FormLabel className="text-md" htmlFor={name}>
                 {label} {isOptional ? "" : <FormStar />}

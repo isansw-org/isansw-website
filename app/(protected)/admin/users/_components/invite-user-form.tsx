@@ -1,41 +1,43 @@
 "use client";
 
 import { ErrorAlert } from "@/components/common/alerts";
-import { CheckboxField, StringField } from "@/components/form/fields";
+import { FormSubmitButton } from "@/components/form";
+import { StringField } from "@/components/form/fields";
+import { FormError } from "@/components/form/form-error";
 import { Button } from "@/components/ui/button";
 import { Form } from "@/components/ui/form";
 import { useFormStore } from "@/hooks/use-form-store";
+import { useOpenCloseStore } from "@/hooks/use-openclose-store";
 import {
   rateLimit_defaultErrorMessage,
   rateLimitExceeded,
 } from "@/lib/security/ratelimit";
-import server from "@/server";
 import { zodResolver } from "@hookform/resolvers/zod";
-import { useRouter } from "next/navigation";
 import { useForm } from "react-hook-form";
 import { z } from "zod";
 
 const formSchema = z.object({
+  fullName: z.string().min(1, { message: "Full name is required." }),
   email: z.string().email(),
-  password: z.string().min(1, { message: "Password is required." }),
 });
 
 type FormSchema = z.infer<typeof formSchema>;
 
-export const SignInForm = () => {
-  const { error, loading, setError, setLoading } = useFormStore();
+export function InviteUserForm() {
+  const { setError, setLoading } = useFormStore();
+  const closeDialog = useOpenCloseStore((state) => state.close);
 
   const form = useForm<FormSchema>({
     resolver: zodResolver(formSchema),
     defaultValues: {
+      fullName: "",
       email: "",
-      password: "",
     },
   });
 
   const onSubmit = async (data: FormSchema) => {
-    if (rateLimitExceeded("SignIn")) {
-      const rateLimitMessage = rateLimit_defaultErrorMessage("SignIn");
+    if (rateLimitExceeded("InviteUser")) {
+      const rateLimitMessage = rateLimit_defaultErrorMessage("InviteUser");
       setError(rateLimitMessage);
       return;
     }
@@ -43,41 +45,34 @@ export const SignInForm = () => {
     setError(undefined);
     setLoading(true);
 
-    await server.auth.signIn();
+    // action
 
     setLoading(false);
+    closeDialog();
   };
 
   return (
     <>
-      <ErrorAlert message={error} />
+      <FormError />
       <Form {...form}>
         <form onSubmit={form.handleSubmit(onSubmit)}>
           <div className="space-y-4 mb-4">
+            <StringField
+              label="Full name"
+              placeholder="John Doe"
+              name="fullName"
+              control={form.control}
+            />
             <StringField
               label="Email"
               placeholder="john.doe@example.com"
               name="email"
               control={form.control}
             />
-            <StringField
-              label="Password"
-              placeholder="********"
-              name="password"
-              type="password"
-              control={form.control}
-            />
           </div>
-          <Button
-            loading={loading}
-            type="submit"
-            className="w-full text-md"
-            size="lg"
-          >
-            Sign in
-          </Button>
+          <FormSubmitButton>Send Invitation</FormSubmitButton>
         </form>
       </Form>
     </>
   );
-};
+}

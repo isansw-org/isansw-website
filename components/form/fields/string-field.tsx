@@ -46,10 +46,7 @@ export function StringField({
           </FormLabel>
           <FormControl>
             <Input
-              className={cn(
-                "border-black",
-                fieldState?.invalid && "border-red-500"
-              )}
+              className={cn(fieldState?.invalid && "border-red-500")}
               placeholder={placeholder}
               readOnly={isReadOnly}
               type={type}

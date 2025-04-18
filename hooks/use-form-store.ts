@@ -1,13 +1,13 @@
 import { create } from "zustand";
 
-type FormStore = {
+type Store = {
   error: string | undefined;
   loading: boolean;
   setError: (error: string | undefined) => void;
   setLoading: (loading: boolean) => void;
 };
 
-export const useFormStore = create<FormStore>((set) => ({
+export const useFormStore = create<Store>((set) => ({
   error: undefined,
   loading: false,
   setError: (error) => set({ error }),

@@ -20,3 +20,6 @@ export const User = sql.pgTable(
   // Optimization: Unclustered index for faster query by email
   (table) => [sql.index("User_Email_Idx").on(table.Email)]
 );
+
+export type IUser = typeof User.$inferSelect;
+export type IUserInsertParams = typeof User.$inferInsert;

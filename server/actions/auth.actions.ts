@@ -1,6 +1,14 @@
 "use server";
 
-export async function sendInvitationEmail() {}
+import { StandardActionResponse } from "../response";
+import { internal_sendInvitationEmail } from "./internals/auth/send-invitation-email";
+
+export async function sendInvitationEmail(params: {
+  fullName: string;
+  email: string;
+}): Promise<StandardActionResponse> {
+  return internal_sendInvitationEmail(params);
+}
 
 export async function signUp() {}
 

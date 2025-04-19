@@ -26,8 +26,6 @@ export async function unbanUser() {}
 
 export async function updateRole() {}
 
-export async function verifyToken() {}
-
 export async function sendOTPEmail() {}
 
 export async function verifyOTP() {}

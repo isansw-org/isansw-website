@@ -36,7 +36,6 @@ const nextConfig = {
     serverActions: {
       bodySizeLimit: "50mb" as const, // large sizes allow for file uploads via actions
     },
-    serverExternalPackages: ["pino", "pino-pretty"],
   },
 };
 

@@ -1,5 +1,6 @@
 import * as auth from "./actions/auth.actions";
+import * as user from "./actions/user.actions";
 
-const server = { auth };
+const server = { auth, user };
 
 export default server;

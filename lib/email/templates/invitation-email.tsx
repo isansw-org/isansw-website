@@ -26,46 +26,40 @@ export const InvitationEmailTemplate = ({
     <Html>
       <Body style={styles.body}>
         <Container style={styles.container}>
-          {/* Header */}
           <Section style={styles.header}>
-            <Heading style={styles.headerHeading}>
-              Welcome to PPI Australia!
-            </Heading>
+            <Heading style={styles.headerHeading}>ISANSW</Heading>
           </Section>
 
-          {/* Content */}
           <Section style={styles.content}>
             <Heading style={styles.subheading}>Hi {recipientName},</Heading>
             <Text style={styles.text}>
-              We have invited you to become a manager of the PPI Australia
-              website. Please click the following button to continue with your
-              registration.
+              You’ve been invited to manage the ISANSW website. Click the button
+              below to get started with your registration.
             </Text>
 
             <Section style={styles.buttonContainer}>
               <Button style={styles.button} href={registrationLink}>
-                Join PPI Australia
+                Proceed
               </Button>
             </Section>
 
-            <Text style={styles.warning}>
-              Please do not share this link with anybody.
+            <Text style={styles.smallPrint}>
+              Please do not share this link with anyone.
             </Text>
           </Section>
 
-          {/* Footer */}
           <Section style={styles.footer}>
             <Text style={styles.footerText}>
               Need help?{" "}
               <Link
-                href="mailto:infotech@ppi-australia.org"
+                href="mailto:webmasterisansw@gmail.com"
                 style={styles.footerLink}
               >
-                Contact IT Support
+                Contact Support
               </Link>
             </Text>
             <Text style={styles.footerText}>
-              &copy; 2025 PPI Australia. All rights reserved.
+              &copy; 2025 ISANSW. All rights reserved.
             </Text>
           </Section>
         </Container>
@@ -78,71 +72,77 @@ const styles = {
   body: {
     margin: 0,
     padding: 0,
-    fontFamily: "Arial, sans-serif",
-    backgroundColor: "#f9f9f9",
-    color: "#333",
+    fontFamily: '"Helvetica Neue", Arial, sans-serif',
+    backgroundColor: "#F2F2F5",
+    color: "#333333",
   },
   container: {
     maxWidth: "600px",
-    margin: "20px auto",
-    backgroundColor: "#fff",
-    border: "1px solid #ddd",
-    borderRadius: "8px",
+    margin: "0 auto",
+    backgroundColor: "#FFFFFF",
+    borderRadius: "12px",
     overflow: "hidden",
+    boxShadow: "0 4px 12px rgba(0, 0, 0, 0.05)",
   },
   header: {
-    backgroundColor: "#ff4b5c",
-    color: "#fff",
+    backgroundColor: "#000000",
+    color: "#FFFFFF",
     textAlign: "center" as const,
-    padding: "20px",
+    padding: "24px",
   },
   headerHeading: {
     margin: 0,
-    fontSize: "24px",
+    fontSize: "26px",
+    letterSpacing: "1px",
+    textTransform: "uppercase" as const,
   },
   content: {
-    padding: "20px",
+    padding: "24px",
     textAlign: "left" as const,
     lineHeight: "1.6",
   },
   subheading: {
-    color: "#333",
+    color: "#000000",
     fontSize: "20px",
+    marginBottom: "12px",
   },
   text: {
-    margin: "10px 0",
+    margin: "0 0 20px 0",
     fontSize: "16px",
   },
   buttonContainer: {
     textAlign: "center" as const,
-    margin: "20px 0",
+    margin: "24px 0",
   },
   button: {
     display: "inline-block",
-    backgroundColor: "#ff4b5c",
-    color: "#fff",
+    backgroundColor: "#000000",
+    color: "#FFFFFF",
     textDecoration: "none",
-    padding: "12px 32px",
+    padding: "14px 32px",
     fontSize: "16px",
-    borderRadius: "5px",
+    borderRadius: "8px",
+    fontWeight: "bold" as const,
   },
-  warning: {
+  smallPrint: {
+    fontSize: "12px",
+    color: "#777777",
     textAlign: "center" as const,
-    fontWeight: "bold",
+    marginTop: "16px",
   },
   footer: {
-    backgroundColor: "#f1f1f1",
+    backgroundColor: "#F9F9F9",
     textAlign: "center" as const,
-    padding: "10px 20px",
-    fontSize: "14px",
-    color: "#777",
+    padding: "16px 24px",
   },
   footerText: {
-    margin: 0,
-    color: "#777",
+    margin: "4px 0",
+    fontSize: "14px",
+    color: "#777777",
   },
   footerLink: {
-    color: "#ff4b5c",
+    color: "#000000",
     textDecoration: "none",
+    fontWeight: "bold" as const,
   },
 };

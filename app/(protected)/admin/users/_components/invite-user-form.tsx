@@ -9,8 +9,10 @@ import {
   rateLimit_defaultErrorMessage,
   rateLimitExceeded,
 } from "@/lib/security/ratelimit";
+import server from "@/server";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { useForm } from "react-hook-form";
+import { toast } from "sonner";
 import { z } from "zod";
 
 const formSchema = z.object({
@@ -42,10 +44,19 @@ export function InviteUserForm() {
     setError(undefined);
     setLoading(true);
 
-    // action
+    const response = await server.auth.sendInvitationEmail({
+      fullName: data.fullName,
+      email: data.email,
+    });
 
     setLoading(false);
-    closeDialog();
+
+    if (response.success) {
+      toast.success(response.message);
+      closeDialog();
+    } else {
+      setError(response.message);
+    }
   };
 
   return (

@@ -1,3 +1,6 @@
+import { error } from "console";
+import pino from "pino";
+
 export type StandardActionResponse = {
   success: boolean;
   message: string;
@@ -8,13 +11,16 @@ export const GenericUnexpectedErrorResponse: StandardActionResponse = {
   message: "Something went wrong...",
 };
 
-export function defaultErrorResponseHandler(
-  error: unknown
-): StandardActionResponse {
-  if (error instanceof Error) {
+export function defaultErrorResponseHandler(params: {
+  error: unknown;
+  logger: pino.Logger<never, boolean>;
+}): StandardActionResponse {
+  if (params.error instanceof Error) {
+    params.logger.error(params.error.message);
+
     return {
       success: false,
-      message: error.message,
+      message: params.error.message,
     };
   }
 

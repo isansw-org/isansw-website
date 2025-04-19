@@ -2,7 +2,7 @@ import { render } from "@react-email/components";
 import {
   invitationEmailSchema,
   InvitationEmailTemplate,
-} from "./templates/InvitationEmailTemplate";
+} from "./templates/invitation-email";
 
 export const enum EmailTemplates {
   InvitationEmailTemplate = "InvitationEmailTemplate",

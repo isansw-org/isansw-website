@@ -8,6 +8,13 @@
       "when": 1744864838589,
       "tag": "0000_true_mach_iv",
       "breakpoints": true
+    },
+    {
+      "idx": 1,
+      "version": "7",
+      "when": 1745081178472,
+      "tag": "0001_furry_scrambler",
+      "breakpoints": true
     }
   ]
 }

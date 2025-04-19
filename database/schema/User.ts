@@ -13,7 +13,10 @@ export const User = sql.pgTable(
     PasswordHash: sql.varchar("PasswordHash", { length: 255 }).notNull(),
     Role: roleEnum().notNull(),
     TwoFactorEnabled: sql.boolean("TwoFactorEnabled").notNull().default(false),
-    IsBanned: sql.boolean("IsBanned").notNull().default(false),
+    IsAccountDisabled: sql
+      .boolean("IsAccountDisabled")
+      .notNull()
+      .default(false),
     LastLogin: sql.timestamp("LastLogin"), // if null, then user was just registered and hasn't logged in
     ...timestamps,
   },

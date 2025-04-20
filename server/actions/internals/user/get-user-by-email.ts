@@ -6,28 +6,28 @@ import { eq } from "drizzle-orm";
 
 const module = getModulePath(import.meta.url);
 
-export async function internal_getUserByEmail(params: {
-  email: string;
-}): Promise<IUser | null> {
+export async function internal_getUserByEmail(
+  email: string
+): Promise<IUser | null> {
   const log = logger.child({ module, function: "internal_getUserByEmail" });
 
   try {
-    log.debug(`Getting user by email: ${params.email}`);
+    log.debug(`Getting user by email: ${email}`);
 
     const [user] = await database
       .select()
       .from(User)
-      .where(eq(User.Email, params.email));
+      .where(eq(User.Email, email));
 
     if (!user) {
-      throw new Error(`User ${params.email} not found.`);
+      throw new Error(`User ${email} not found.`);
     }
 
-    log.debug(`Found user with email: ${params.email}`);
+    log.debug(`Found user with email: ${email}`);
 
     return user;
   } catch {
-    log.debug(`User ${params.email} not found.`);
+    log.debug(`User ${email} not found.`);
     return null;
   }
 }

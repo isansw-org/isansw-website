@@ -4,10 +4,9 @@ import { SignUpForm } from "./_components/sign-up-form";
 import { SearchParams } from "next/dist/server/request/search-params";
 import { getSearchParam } from "@/lib/utils/params";
 import { isString } from "@/lib/utils/type-guards";
-import { decryptURLSafe } from "@/lib/security/encryption";
-import { UserInvitationPayload, verifyJWT } from "@/lib/security/jwt";
 import { Unauthorized } from "@/components/common/fallbacks/unauthorized";
 import { notFound } from "next/navigation";
+import { verifyToken } from "@/server/actions/auth.actions";
 
 type Props = {
   searchParams?: SearchParams;
@@ -23,8 +22,7 @@ export default async function Page({ searchParams }: Props) {
 
   if (!token) return notFound();
 
-  const jwt = decryptURLSafe(token);
-  const payload = verifyJWT<UserInvitationPayload>(jwt);
+  const payload = await verifyToken(token);
   if (!payload) {
     return (
       <Unauthorized

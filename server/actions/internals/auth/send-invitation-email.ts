@@ -20,7 +20,7 @@ const module = getModulePath(import.meta.url);
 
 const __verifyUserNonExistence = async (email: string): Promise<void> => {
   try {
-    const existingUser = await getUserByEmail({ email: email });
+    const existingUser = await getUserByEmail(email);
     if (existingUser) {
       throw new Error(`Invitee ${email} is an existing, registered user.`);
     }
@@ -85,8 +85,8 @@ export async function internal_sendInvitationEmail(
 ): Promise<StandardActionResponse> {
   const log = logger.child({
     module,
-    invoked_by: "NONEYET",
     function: "internal_sendInvitationEmail",
+    invoked_by: "NONEYET",
   });
 
   try {

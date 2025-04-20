@@ -1,15 +1,13 @@
 "use client";
 
-import { ErrorAlert } from "@/components/common/alerts";
+import { FormError, FormSubmitButton } from "@/components/form";
 import { StringField } from "@/components/form/fields";
-import { Button } from "@/components/ui/button";
 import { Form } from "@/components/ui/form";
 import { useFormStore } from "@/hooks/use-form-store";
 import {
   rateLimit_defaultErrorMessage,
   rateLimitExceeded,
 } from "@/lib/security/ratelimit";
-import server from "@/server";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { useForm } from "react-hook-form";
 import { z } from "zod";
@@ -22,7 +20,7 @@ const formSchema = z.object({
 type FormSchema = z.infer<typeof formSchema>;
 
 export const SignInForm = () => {
-  const { error, loading, setError, setLoading } = useFormStore();
+  const { setError, setLoading } = useFormStore();
 
   const form = useForm<FormSchema>({
     resolver: zodResolver(formSchema),
@@ -42,14 +40,14 @@ export const SignInForm = () => {
     setError(undefined);
     setLoading(true);
 
-    await server.auth.signIn();
+    // action
 
     setLoading(false);
   };
 
   return (
     <>
-      <ErrorAlert message={error} />
+      <FormError />
       <Form {...form}>
         <form onSubmit={form.handleSubmit(onSubmit)}>
           <div className="space-y-4 mb-4">
@@ -67,14 +65,7 @@ export const SignInForm = () => {
               control={form.control}
             />
           </div>
-          <Button
-            loading={loading}
-            type="submit"
-            className="w-full text-md"
-            size="lg"
-          >
-            Sign in
-          </Button>
+          <FormSubmitButton>Sign In</FormSubmitButton>
         </form>
       </Form>
     </>

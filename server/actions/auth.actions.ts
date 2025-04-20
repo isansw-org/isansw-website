@@ -7,6 +7,8 @@ import { internal_isTokenBlacklisted } from "./internals/auth/is-token-blacklist
 import { internal_blacklistToken } from "./internals/auth/blacklist-token";
 import { internal_verifyToken } from "./internals/auth/verify-token";
 import { internal_signUp } from "./internals/auth/sign-up";
+import { getUserByEmail } from "./user.actions";
+import { internal_signIn } from "./internals/auth/sign-in";
 
 export async function sendInvitationEmail(params: {
   fullName: string;
@@ -42,7 +44,12 @@ export async function signUp(params: {
   return await internal_signUp(params);
 }
 
-export async function signIn() {}
+export async function signIn(params: {
+  email: string;
+  password: string;
+}): Promise<StandardActionResponse> {
+  return await internal_signIn(params);
+}
 
 export async function signOut() {}
 

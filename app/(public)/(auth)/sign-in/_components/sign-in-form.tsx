@@ -4,12 +4,16 @@ import { FormError, FormSubmitButton } from "@/components/form";
 import { StringField } from "@/components/form/fields";
 import { Form } from "@/components/ui/form";
 import { useFormStore } from "@/hooks/use-form-store";
+import { pages } from "@/lib/constants/site";
 import {
   rateLimit_defaultErrorMessage,
   rateLimitExceeded,
 } from "@/lib/security/ratelimit";
+import server from "@/server";
 import { zodResolver } from "@hookform/resolvers/zod";
+import { useRouter } from "next/navigation";
 import { useForm } from "react-hook-form";
+import { toast } from "sonner";
 import { z } from "zod";
 
 const formSchema = z.object({
@@ -21,6 +25,7 @@ type FormSchema = z.infer<typeof formSchema>;
 
 export const SignInForm = () => {
   const { setError, setLoading } = useFormStore();
+  const router = useRouter();
 
   const form = useForm<FormSchema>({
     resolver: zodResolver(formSchema),
@@ -40,9 +45,19 @@ export const SignInForm = () => {
     setError(undefined);
     setLoading(true);
 
-    // action
+    const response = await server.auth.signIn({
+      email: data.email,
+      password: data.password,
+    });
 
     setLoading(false);
+
+    if (response.success) {
+      toast.success(response.message);
+      router.push(pages.protected.dashboard.url);
+    } else {
+      setError(response.message);
+    }
   };
 
   return (

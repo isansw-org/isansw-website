@@ -28,6 +28,10 @@ export const pages = {
       label: "Sign Up",
       url: "/sign-up",
     },
+    termsOfService: {
+      label: "Terms of Service",
+      url: "/terms-of-service",
+    },
   },
   protected: {
     dashboard: {

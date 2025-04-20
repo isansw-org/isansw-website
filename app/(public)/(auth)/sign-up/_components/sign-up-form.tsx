@@ -4,12 +4,17 @@ import { FormError, FormSubmitButton } from "@/components/form";
 import { CheckboxField, StringField } from "@/components/form/fields";
 import { Form } from "@/components/ui/form";
 import { useFormStore } from "@/hooks/use-form-store";
+import { pages } from "@/lib/constants/site";
+import { UserInvitationPayload } from "@/lib/security/jwt";
 import {
   rateLimit_defaultErrorMessage,
   rateLimitExceeded,
 } from "@/lib/security/ratelimit";
+import server from "@/server";
 import { zodResolver } from "@hookform/resolvers/zod";
+import { useRouter } from "next/navigation";
 import { useForm } from "react-hook-form";
+import { toast } from "sonner";
 import { z } from "zod";
 
 const formSchema = z
@@ -29,14 +34,20 @@ const formSchema = z
 
 type FormSchema = z.infer<typeof formSchema>;
 
-export const SignUpForm = () => {
+type Props = {
+  token: string;
+  tokenPayload: UserInvitationPayload;
+};
+
+export const SignUpForm = ({ token, tokenPayload }: Props) => {
   const { setError, setLoading } = useFormStore();
+  const router = useRouter();
 
   const form = useForm<FormSchema>({
     resolver: zodResolver(formSchema),
     defaultValues: {
-      fullName: "",
-      email: "",
+      fullName: tokenPayload.fullName,
+      email: tokenPayload.email,
       password: "",
       confirmPassword: "",
     },
@@ -52,9 +63,23 @@ export const SignUpForm = () => {
     setError(undefined);
     setLoading(true);
 
-    // action
+    const response = await server.auth.signUp({
+      user: {
+        fullName: data.fullName,
+        email: data.email,
+        password: data.password,
+      },
+      token: token,
+    });
 
     setLoading(false);
+
+    if (response.success) {
+      toast.success(response.message);
+      router.push(pages.public.signIn.url);
+    } else {
+      setError(response.message);
+    }
   };
 
   return (
@@ -68,12 +93,14 @@ export const SignUpForm = () => {
               placeholder="John Doe"
               name="fullName"
               control={form.control}
+              isReadOnly
             />
             <StringField
               label="Email"
               placeholder="john.doe@example.com"
               name="email"
               control={form.control}
+              isReadOnly
             />
             <StringField
               label="Password"

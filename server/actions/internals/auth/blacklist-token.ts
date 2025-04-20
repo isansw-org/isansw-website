@@ -28,9 +28,6 @@ export async function internal_blacklistToken(
       .where(eq(BlacklistedToken.Token, token));
 
     if (foundMatchingToken) {
-      log.error(
-        `Token ${token} is already blacklisted. Cancelling operation...`
-      );
       throw new Error(`Token ${token} is already blacklisted.`);
     }
 
@@ -41,7 +38,6 @@ export async function internal_blacklistToken(
       .values({ Token: token })
       .returning();
     if (!blacklistedToken) {
-      log.error(`Failed to blacklist token ${token}`);
       throw new Error(`Failed to blacklist token ${token}`);
     }
 

@@ -32,7 +32,7 @@ export async function internal_isTokenBlacklisted(
     log.debug(`Confirmed that ${token} is not a blacklisted token.`);
 
     return false;
-  } catch (error) {
+  } catch {
     return true;
   }
 }

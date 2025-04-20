@@ -12,6 +12,7 @@ import { Input } from "@/components/ui/input";
 import { cn } from "@/lib/utils/cn";
 import { Control } from "react-hook-form";
 import { FormStar } from "../form-star";
+import { Lock } from "lucide-react";
 
 interface Props {
   label: string;
@@ -42,7 +43,8 @@ export function StringField({
       render={({ field, fieldState }) => (
         <FormItem>
           <FormLabel className="text-md">
-            {label} {isOptional ? "" : <FormStar />}
+            {label} {isReadOnly ? <Lock className="w-4 h-4" /> : ""}{" "}
+            {isOptional ? "" : <FormStar />}
           </FormLabel>
           <FormControl>
             <Input

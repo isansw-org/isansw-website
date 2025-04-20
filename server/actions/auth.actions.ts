@@ -1,37 +1,46 @@
 "use server";
 
-import { UserInvitationPayload, verifyJWT } from "@/lib/security/jwt";
+import { UserInvitationPayload } from "@/lib/security/jwt";
 import { StandardActionResponse } from "../response";
 import { internal_sendInvitationEmail } from "./internals/auth/send-invitation-email";
-import { decryptURLSafe } from "@/lib/security/encryption";
 import { internal_isTokenBlacklisted } from "./internals/auth/is-token-blacklisted";
 import { internal_blacklistToken } from "./internals/auth/blacklist-token";
 import { internal_verifyToken } from "./internals/auth/verify-token";
+import { internal_signUp } from "./internals/auth/sign-up";
 
 export async function sendInvitationEmail(params: {
   fullName: string;
   email: string;
 }): Promise<StandardActionResponse> {
-  return internal_sendInvitationEmail(params);
+  return await internal_sendInvitationEmail(params);
 }
 
 export async function isTokenBlacklisted(token: string): Promise<boolean> {
-  return internal_isTokenBlacklisted(token);
+  return await internal_isTokenBlacklisted(token);
 }
 
 export async function blacklistToken(
   token: string
 ): Promise<StandardActionResponse> {
-  return internal_blacklistToken(token);
+  return await internal_blacklistToken(token);
 }
 
 export async function verifyToken<T extends UserInvitationPayload>(
   token: string
 ): Promise<T | null> {
-  return internal_verifyToken(token);
+  return await internal_verifyToken(token);
 }
 
-export async function signUp() {}
+export async function signUp(params: {
+  user: {
+    fullName: string;
+    email: string;
+    password: string;
+  };
+  token: string;
+}) {
+  return await internal_signUp(params);
+}
 
 export async function signIn() {}
 

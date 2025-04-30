@@ -62,3 +62,20 @@ The [documentation](https://github.com/isansw-org/isansw-website) should be your
 ## Conventions
 
 This repository has its own [conventions](#) which we ask you to follow in order to maintain an organized source code moving forward.
+
+## Tech Stack
+
+The following are technologies used to develop the website:
+
+- [Next.js](https://nextjs.org/docs) - A meta framework for React. This is the main application framework we are using to build the website. Every other technology/dependency in this list revolves around Next.js.
+- [Tailwind CSS](https://tailwindcss.com/) - A CSS library for writing your CSS as inline, atomic classes. It is a community standard for styling in React applications.
+- [ShadCN UI](https://ui.shadcn.com/) - A minimally styled, copy-paste component library
+- [PostgreSQL](https://www.postgresql.org/) - The relational database management system
+- [Drizzle ORM](https://orm.drizzle.team/docs/overview) - A database Object Relational Mapper (ORM). It lets you write SQL schema and query definitions in TypeScript code.
+- [Zustand](https://zustand.docs.pmnd.rs/getting-started/introduction) - A simple React state management toolkit. You should use Zustand stores instead of the React hook useState.
+- [Zod](https://zod.dev/) - A simple validation toolkit for TypeScript.
+- [React Email](https://react.email/) - Email markup builder using React code.
+- [Docker](https://www.docker.com/products/docker-desktop/) - Containerization tool for running a local database and email server
+- [GCP Cloud Storage](https://cloud.google.com/storage?hl=en) - Cloud file storage
+
+For any development task, you will likely invest more time learning **Next.js** and **React.**

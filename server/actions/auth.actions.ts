@@ -7,8 +7,10 @@ import { internal_isTokenBlacklisted } from "./internals/auth/is-token-blacklist
 import { internal_blacklistToken } from "./internals/auth/blacklist-token";
 import { internal_verifyToken } from "./internals/auth/verify-token";
 import { internal_signUp } from "./internals/auth/sign-up";
-import { getUserByEmail } from "./user.actions";
 import { internal_signIn } from "./internals/auth/sign-in";
+import { Role } from "@/lib/constants/roles";
+import { internal_authorize } from "./internals/auth/authorize";
+import { Session } from "next-auth";
 
 export async function sendInvitationEmail(params: {
   fullName: string;
@@ -67,4 +69,13 @@ export async function sendOTPEmail() {}
 
 export async function verifyOTP() {}
 
-export async function authorize() {}
+export async function authorize(params: {
+  loggedIn: boolean;
+  hasRole?: Role;
+}): Promise<{
+  accessAllowed: boolean;
+  message: string;
+  session?: Session | null;
+}> {
+  return await internal_authorize(params);
+}

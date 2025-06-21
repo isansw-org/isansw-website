@@ -17,13 +17,12 @@ import { Lock } from "lucide-react";
 interface Props {
   label: string;
   placeholder: string;
-  name: string; // name of the field in the form
-  // eslint-disable-next-line
-  control: Control<any>; // form control from react-hook-form
+  name: string; 
+  control: Control<any>; 
   isReadOnly?: boolean;
   isOptional?: boolean;
   description?: string;
-  type?: "text" | "password";
+  type?: React.HTMLInputTypeAttribute;
 }
 
 export function StringField({
@@ -43,7 +42,7 @@ export function StringField({
       render={({ field, fieldState }) => (
         <FormItem>
           <FormLabel className="text-md">
-            {label} {isReadOnly ? <Lock className="w-4 h-4" /> : ""}{" "}
+            {label} {isReadOnly ? <Lock className="w-4 h-4 inline" /> : ""}{" "}
             {isOptional ? "" : <FormStar />}
           </FormLabel>
           <FormControl>

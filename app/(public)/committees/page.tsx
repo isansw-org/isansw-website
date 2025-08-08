@@ -24,7 +24,7 @@ export default function Home() {
                     <Profile
                         name="David Jefferson Santoso"
                         role="President"
-                        imageSrc="/images/profiles/david-santoso.jpg"
+                        imageSrc="#"
                         instagramUrl="https://instagram.com/"
                         linkedinUrl="https://linkedin.com/in/"
                     />
@@ -35,21 +35,21 @@ export default function Home() {
                     <Profile
                         name="Elisha Honoris"
                         role="VP Internal"
-                        imageSrc="/images/profiles/elisha-honoris.jpg"
+                        imageSrc="#"
                         instagramUrl="https://instagram.com/"
                         linkedinUrl="https://linkedin.com/in/"
                     />
                     <Profile
                         name="Dave Sebastian Setiawan"
                         role="VP Operation"
-                        imageSrc="/images/profiles/dave-setiawan.jpg"
+                        imageSrc="#"
                         instagramUrl="https://instagram.com/"
                         linkedinUrl="https://linkedin.com/in/"
                     />
                     <Profile
                         name="Pius Gabriel"
                         role="VP External"
-                        imageSrc="/images/profiles/pius-gabriel.jpg"
+                        imageSrc="#"
                         instagramUrl="https://instagram.com/"
                         linkedinUrl="https://linkedin.com/in/"
                     />
@@ -61,7 +61,7 @@ export default function Home() {
                     <Profile
                         name="Karina Gabriela Sutrisna"
                         role="Secretary"
-                        imageSrc="/images/profiles/karina-sutrisna.jpg"
+                        imageSrc="#"
                         instagramUrl="https://instagram.com/"
                         linkedinUrl="https://linkedin.com/in/"
                     />
@@ -69,7 +69,7 @@ export default function Home() {
                     <Profile
                         name="Davin Najanurdin"
                         role="Treasurer"
-                        imageSrc="/images/profiles/davin-najanurdin.jpg"
+                        imageSrc="#"
                         instagramUrl="https://instagram.com/"
                         linkedinUrl="https://linkedin.com/in/"
                     />

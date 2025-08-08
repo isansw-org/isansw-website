@@ -29,7 +29,7 @@ export default function Profile({
         />
       </div>
       <div className="flex justify-center gap-4 mt-2">
-        {instagramUrl && (
+        *\{instagramUrl && (
           <a href={instagramUrl} target="_blank" rel="noopener noreferrer">
             <FaInstagram className="text-black text-2xl" />
           </a>

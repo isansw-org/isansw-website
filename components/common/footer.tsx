@@ -1,15 +1,17 @@
 import Link from "next/link";
 import Image from "next/image";
-import isaLogo from "@/components/images/isa_logo.png";
+//import isaLogo from "@/components/images/isa_logo.png";
 
 export default function Footer() {
   return (
     <footer className="bg-red-500 text-amber-50 px-6 py-10">
       <div className="max-w-6xl mx-auto grid md:grid-cols-3 gap-8 text-sm">
         {/* Logo */}
+        {/* 
         <div className="flex flex-col items-start">
           <Image src={isaLogo} alt="ISANSW logo" width={120} height={50} />
         </div>
+        */}
 
         {/* Quick Links */}
         <div>

@@ -1,6 +1,6 @@
 import Image from "next/image";
-import about1 from "@/components/images/about1.jpg";
-import about2 from "@/components/images/about2.jpg";
+// import about1 from "@/components/images/about1.jpg";
+//import about2 from "@/components/images/about2.jpg";
 
 export default function Hero() {
   return (
@@ -18,9 +18,12 @@ export default function Hero() {
 
     {/* Image Gallery - Overlapping & in front of line */}
     <div className="relative z-10 -mt-16 flex justify-center gap-8 flex-wrap px-6">
+      {/* 
       <div className="w-56 h-44 border-2 border-rose-400 rounded-2xl overflow-hidden">
         <Image src={about1} alt="Photo 1" className="w-full h-full object-cover" />
       </div>
+      */}
+      {/*
       <div className="w-40 h-36 border-2 border-rose-400 rounded-2xl overflow-hidden">
         <Image src={about2} alt="Photo 2" className="w-full h-full object-cover" />
       </div>
@@ -30,6 +33,7 @@ export default function Hero() {
       <div className="w-40 h-36 border-2 border-rose-400 rounded-2xl overflow-hidden">
         <Image src={about2} alt="Photo 4" className="w-full h-full object-cover" />
       </div>
+      */}
     </div>
   </section>
 

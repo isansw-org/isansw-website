@@ -2,16 +2,18 @@
 
 import Image from "next/image";
 import Link from "next/link";
-import isaLogo from "@/components/images/isa_logo.png";
+//import isaLogo from "@/components/images/isa_logo.png";
 
 export default function Navbar() {
   return (
     <nav className="bg-red-500 px-6 py-3 flex items-center justify-between">
       <div className="flex items-center space-x-2">
         <Link href="/about">
+          {/* 
           <div className="flex items-center space-x-2 inline-block p-2 border-4 rounded-2xl bg-white shadow-lg">
             <Image src={isaLogo} alt="ISANSW logo" width={120} height={50} />
           </div>
+          */}
         </Link>
       </div>
 

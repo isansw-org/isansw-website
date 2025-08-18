@@ -13,11 +13,11 @@ export default function Home() {
           <div className="text-xl text-center grid space-y-4">
             <h3 className="font-bold text-4xl pb-4 text-red-500">Our Story</h3>
             <p className="max-w-2xl mx-auto">
-              Founded by and for Indonesian studets, ISANSW staretd as a way to
-              stay connected far from home. From humble beginnings, we've grown
-              into a cross-campus community that celebrates Indonesian identity,
-              supports student life, and create memorable experienced for
-              students across New South Wales.
+              Founded by and for Indonesian students, ISANSW started as a way to
+              stay connected far from home. From humble beginnings, we have
+              grown into a cross-campus community that celebrates Indonesian
+              identity, supports student life, and create memorable experienced
+              for students across New South Wales.
             </p>
           </div>
         </div>

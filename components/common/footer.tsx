@@ -92,28 +92,28 @@ export default function Footer() {
           {/* Socials */}
           <div className="ml-4 flex items-center gap-4">
             <a
-              href="#"
+              href="https://www.instagram.com/isa_nsw/"
               aria-label="Instagram"
               className="rounded-full p-2 bg-white/10 hover:bg-white/20 transition"
             >
               <Instagram size={22} />
             </a>
             <a
-              href="#"
+              href="https://x.com/ppiansw"
               aria-label="X (Twitter)"
               className="rounded-full p-2 bg-white/10 hover:bg-white/20 transition"
             >
               <Twitter size={22} />
             </a>
             <a
-              href="#"
+              href="https://www.facebook.com/ppiansw/"
               aria-label="Facebook"
               className="rounded-full p-2 bg-white/10 hover:bg-white/20 transition"
             >
               <Facebook size={22} />
             </a>
             <a
-              href="#"
+              href="https://www.linkedin.com/company/indonesian-student-association-new-south-wales/"
               aria-label="LinkedIn"
               className="rounded-full p-2 bg-white/10 hover:bg-white/20 transition"
             >

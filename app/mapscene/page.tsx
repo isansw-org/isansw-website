@@ -302,6 +302,7 @@ export default function MapScenePage() {
           position: [-4, 3, 6],
         }}
       >
+        <color attach="background" args={["#fffbeb"]} />
         <Suspense fallback={<Loader />}>
           <Experience
             active={active}
@@ -338,7 +339,7 @@ export default function MapScenePage() {
                   </Canvas>
                 </div>
                 <button
-                  className="mt-4 bg-neutral-100 text-black text-2xl px-4 py-2 rounded flex items-center gap-2 hover:bg-neutral-200"
+                  className="mt-4 bg-red-500 text-white text-2xl px-4 py-2 rounded flex items-center gap-2 hover:bg-neutral-200"
                   onClick={() => setIsModalOpen(true)}
                 >
                   Expand <FiMaximize2 />
@@ -347,17 +348,17 @@ export default function MapScenePage() {
 
               {/* Info Box */}
               <div className="flex flex-col justify-center flex-1 min-w-[300px] md:min-w-[450px] rounded p-6 text-center md:text-left space-y-2">
-                <h3 className="text-white text-4xl font-semibold">
+                <h3 className="text-black text-4xl font-semibold">
                   PPIA University of Newcastle
                 </h3>
-                <hr className="border border-neutral-500 w-32 mx-auto md:mx-0" />
-                <p className="text-neutral-300 text-2xl leading-relaxed">
+                <hr className="border border-black w-32 mx-auto md:mx-0" />
+                <p className="text-black text-2xl leading-relaxed">
                   <strong>President:</strong> Vacant
                 </p>
-                <p className="text-neutral-300 text-2xl leading-relaxed break-all">
+                <p className="text-black text-2xl leading-relaxed break-all">
                   <strong>Email:</strong> ppia.newcastle@gmail.com
                 </p>
-                <p className="text-neutral-300 text-2xl leading-relaxed">
+                <p className="text-black text-2xl leading-relaxed">
                   <strong>Social Platforms:</strong>
                 </p>
                 <div className="flex items-center gap-3 mt-2 flex-wrap justify-center md:justify-start">
@@ -368,10 +369,10 @@ export default function MapScenePage() {
                     className="flex items-center gap-2 px-3 py-2 rounded cursor-pointer transition-colors duration-200 hover:bg-red-500 group"
                   >
                     <FaInstagram
-                      className="text-white transition-colors duration-200 group-hover:text-white"
+                      className="text-black transition-colors duration-200 group-hover:text-white"
                       size={60}
                     />
-                    <span className="text-2xl text-neutral-300 transition-colors duration-200 group-hover:text-white">
+                    <span className="text-2xl text-black transition-colors duration-200 group-hover:text-white">
                       Instagram
                     </span>
                   </a>
@@ -384,7 +385,7 @@ export default function MapScenePage() {
 
       {/* Newcastle Modal Overlay */}
       {isModalOpen && expandedPin === "newcastle" && (
-        <div className="fixed inset-0 z-50 bg-black bg-opacity-90 flex items-center justify-center p-4">
+        <div className="fixed inset-0 z-50 bg-amber-50 bg-opacity-90 flex items-center justify-center p-4">
           <div className="relative w-full max-w-6xl bg-neutral-900 rounded-xl overflow-hidden flex flex-col md:flex-row">
             {/* Left Text */}
             <div className="w-full md:w-1/3 p-6 text-white flex flex-col gap-4">
@@ -446,7 +447,7 @@ export default function MapScenePage() {
                   </Canvas>
                 </div>
                 <button
-                  className="mt-4 bg-neutral-100 text-black text-2xl px-4 py-2 rounded flex items-center gap-2 hover:bg-neutral-200"
+                  className="mt-4 bg-red-500 text-white text-2xl px-4 py-2 rounded flex items-center gap-2 hover:bg-neutral-200"
                   onClick={() => setIsModalOpen(true)}
                 >
                   Expand <FiMaximize2 />
@@ -455,17 +456,17 @@ export default function MapScenePage() {
 
               {/* Info Box */}
               <div className="flex flex-col justify-center flex-1 min-w-[300px] md:min-w-[450px] rounded p-6 text-center md:text-left space-y-2">
-                <h3 className="text-white text-4xl font-semibold">
+                <h3 className="text-black text-4xl font-semibold">
                   PPIA Macquarie University
                 </h3>
-                <hr className="border border-neutral-500 w-32 mx-auto md:mx-0" />
-                <p className="text-neutral-300 text-2xl leading-relaxed">
+                <hr className="border border-black w-32 mx-auto md:mx-0" />
+                <p className="text-black text-2xl leading-relaxed">
                   <strong>President:</strong> Reinald Firdaus Gunawan
                 </p>
-                <p className="text-neutral-300 text-2xl leading-relaxed break-all">
+                <p className="text-black text-2xl leading-relaxed break-all">
                   <strong>Email:</strong> ppia.macq@gmail.com
                 </p>
-                <p className="text-neutral-300 text-2xl leading-relaxed">
+                <p className="text-black text-2xl leading-relaxed">
                   <strong>Social Platforms:</strong>
                 </p>
                 <div className="flex items-center gap-3 mt-2 flex-wrap justify-center md:justify-start">
@@ -476,10 +477,10 @@ export default function MapScenePage() {
                     className="flex items-center gap-2 px-3 py-2 rounded cursor-pointer transition-colors duration-200 hover:bg-red-500 group"
                   >
                     <FaInstagram
-                      className="text-white transition-colors duration-200 group-hover:text-white"
+                      className="text-black transition-colors duration-200 group-hover:text-black"
                       size={60}
                     />
-                    <span className="text-2xl text-neutral-300 transition-colors duration-200 group-hover:text-white">
+                    <span className="text-2xl text-black transition-colors duration-200 group-hover:text-black">
                       Instagram
                     </span>
                   </a>
@@ -492,7 +493,7 @@ export default function MapScenePage() {
 
       {/* Macquarie Modal Overlay */}
       {isModalOpen && expandedPin === "macquarie" && (
-        <div className="fixed inset-0 z-50 bg-black bg-opacity-90 flex items-center justify-center p-4">
+        <div className="fixed inset-0 z-50 bg-amber-50 bg-opacity-90 flex items-center justify-center p-4">
           <div className="relative w-full max-w-6xl bg-neutral-900 rounded-xl overflow-hidden flex flex-col md:flex-row">
             {/* Left Text */}
             <div className="w-full md:w-1/3 p-6 text-white flex flex-col gap-4">
@@ -557,7 +558,7 @@ export default function MapScenePage() {
                   </Canvas>
                 </div>
                 <button
-                  className="mt-4 bg-neutral-100 text-black text-2xl px-4 py-2 rounded flex items-center gap-2 hover:bg-neutral-200"
+                  className="mt-4 bg-red-500 text-white text-2xl px-4 py-2 rounded flex items-center gap-2 hover:bg-neutral-200"
                   onClick={() => setIsModalOpen(true)}
                 >
                   Expand <FiMaximize2 />
@@ -566,17 +567,17 @@ export default function MapScenePage() {
 
               {/* Info Box */}
               <div className="flex flex-col justify-center flex-1 min-w-[300px] md:min-w-[450px] rounded p-6 text-center md:text-left space-y-2">
-                <h3 className="text-white text-4xl font-semibold">
+                <h3 className="text-black text-4xl font-semibold">
                   PPIA University of Wollongong
                 </h3>
-                <hr className="border border-neutral-500 w-32 mx-auto md:mx-0" />
-                <p className="text-neutral-300 text-2xl leading-relaxed">
+                <hr className="border border-black w-32 mx-auto md:mx-0" />
+                <p className="text-black text-2xl leading-relaxed">
                   <strong>President:</strong> Rafli Otman
                 </p>
-                <p className="text-neutral-300 text-2xl leading-relaxed break-all">
+                <p className="text-black text-2xl leading-relaxed break-all">
                   <strong>Email:</strong> gong.ppia@gmail.com
                 </p>
-                <p className="text-neutral-300 text-2xl leading-relaxed">
+                <p className="text-black text-2xl leading-relaxed">
                   <strong>Social Platforms:</strong>
                 </p>
                 <div className="flex items-center gap-3 mt-2 flex-wrap justify-center md:justify-start">
@@ -587,10 +588,10 @@ export default function MapScenePage() {
                     className="flex items-center gap-2 px-3 py-2 rounded cursor-pointer transition-colors duration-200 hover:bg-red-500 group"
                   >
                     <FaInstagram
-                      className="text-white transition-colors duration-200 group-hover:text-white"
+                      className="text-black transition-colors duration-200 group-hover:text-white"
                       size={60}
                     />
-                    <span className="text-2xl text-neutral-300 transition-colors duration-200 group-hover:text-white">
+                    <span className="text-2xl text-black transition-colors duration-200 group-hover:text-white">
                       Instagram
                     </span>
                   </a>
@@ -603,7 +604,7 @@ export default function MapScenePage() {
 
       {/* Wollongong Modal Overlay */}
       {isModalOpen && expandedPin === "wollongong" && (
-        <div className="fixed inset-0 z-50 bg-black bg-opacity-90 flex items-center justify-center p-4">
+        <div className="fixed inset-0 z-50 bg-amber-50 bg-opacity-90 flex items-center justify-center p-4">
           <div className="relative w-full max-w-6xl bg-neutral-900 rounded-xl overflow-hidden flex flex-col md:flex-row">
             {/* Left Text */}
             <div className="w-full md:w-1/3 p-6 text-white flex flex-col gap-4">
@@ -667,7 +668,7 @@ export default function MapScenePage() {
                   </Canvas>
                 </div>
                 <button
-                  className="mt-4 bg-neutral-100 text-black text-2xl px-4 py-2 rounded flex items-center gap-2 hover:bg-neutral-200"
+                  className="mt-4 bg-red-500 text-white text-2xl px-4 py-2 rounded flex items-center gap-2 hover:bg-neutral-200"
                   onClick={() => setIsModalOpen(true)}
                 >
                   Expand <FiMaximize2 />
@@ -676,17 +677,17 @@ export default function MapScenePage() {
 
               {/* Info Box */}
               <div className="flex flex-col justify-center flex-1 min-w-[300px] md:min-w-[450px] rounded p-6 text-center md:text-left space-y-2">
-                <h3 className="text-white text-4xl font-semibold">
+                <h3 className="text-black text-4xl font-semibold">
                   Indonesian Student Society at Western Sydney University
                 </h3>
-                <hr className="border border-neutral-500 w-32 mx-auto md:mx-0" />
-                <p className="text-neutral-300 text-2xl leading-relaxed">
+                <hr className="border border-black w-32 mx-auto md:mx-0" />
+                <p className="text-black text-2xl leading-relaxed">
                   <strong>President:</strong> Rafa Adhitama
                 </p>
-                <p className="text-neutral-300 text-2xl leading-relaxed break-all">
+                <p className="text-black text-2xl leading-relaxed break-all">
                   <strong>Email:</strong> ppiawesternsydney@gmail.com
                 </p>
-                <p className="text-neutral-300 text-2xl leading-relaxed">
+                <p className="text-black text-2xl leading-relaxed">
                   <strong>Social Platforms:</strong>
                 </p>
                 <div className="flex items-center gap-3 mt-2 flex-wrap justify-center md:justify-start">
@@ -697,10 +698,10 @@ export default function MapScenePage() {
                     className="flex items-center gap-2 px-3 py-2 rounded cursor-pointer transition-colors duration-200 hover:bg-red-500 group"
                   >
                     <FaInstagram
-                      className="text-white transition-colors duration-200 group-hover:text-white"
+                      className="text-black transition-colors duration-200 group-hover:text-white"
                       size={60}
                     />
-                    <span className="text-2xl text-neutral-300 transition-colors duration-200 group-hover:text-white">
+                    <span className="text-2xl text-black transition-colors duration-200 group-hover:text-white">
                       Instagram
                     </span>
                   </a>
@@ -713,7 +714,7 @@ export default function MapScenePage() {
 
       {/* WesternUni Modal Overlay */}
       {isModalOpen && expandedPin === "western" && (
-        <div className="fixed inset-0 z-50 bg-black bg-opacity-90 flex items-center justify-center p-4">
+        <div className="fixed inset-0 z-50 bg-amber-50 bg-opacity-90 flex items-center justify-center p-4">
           <div className="relative w-full max-w-6xl bg-neutral-900 rounded-xl overflow-hidden flex flex-col md:flex-row">
             {/* Left Text */}
             <div className="w-full md:w-1/3 p-6 text-white flex flex-col gap-4">
@@ -774,7 +775,7 @@ export default function MapScenePage() {
                     className={`px-4 py-2 rounded ${
                       selectedUni === uni
                         ? "bg-red-500 text-white"
-                        : "bg-neutral-700 text-neutral-300"
+                        : "bg-neutral-700 text-white"
                     }`}
                   >
                     {uni.toUpperCase()}
@@ -802,7 +803,7 @@ export default function MapScenePage() {
                     </Canvas>
                   </div>
                   <button
-                    className="mt-4 bg-neutral-100 text-black text-2xl px-4 py-2 rounded flex items-center gap-2 hover:bg-neutral-200"
+                    className="mt-4 bg-red-500 text-white text-2xl px-4 py-2 rounded flex items-center gap-2 hover:bg-neutral-200"
                     onClick={() => setIsModalOpen(true)}
                   >
                     Expand <FiMaximize2 />
@@ -813,18 +814,18 @@ export default function MapScenePage() {
                 <div className="flex flex-col justify-center flex-1 min-w-[300px] md:min-w-[450px] rounded p-6 text-center md:text-left space-y-2">
                   {selectedUni === "uts" && (
                     <>
-                      <h3 className="text-white text-4xl font-semibold">
+                      <h3 className="text-black text-4xl font-semibold">
                         PPIA University of Technology Sydney
                       </h3>
-                      <hr className="border border-neutral-500 w-32 mx-auto md:mx-0" />
-                      <p className="text-neutral-300 text-2xl leading-relaxed">
+                      <hr className="border border-black w-32 mx-auto md:mx-0" />
+                      <p className="text-black text-2xl leading-relaxed">
                         <strong>President:</strong> Nicholas Bevan
                       </p>
-                      <p className="text-neutral-300 text-2xl leading-relaxed break-all">
+                      <p className="text-black text-2xl leading-relaxed break-all">
                         <strong>Email:</strong>{" "}
                         president@ppia.activateuts.com.au
                       </p>
-                      <p className="text-neutral-300 text-2xl leading-relaxed">
+                      <p className="text-black text-2xl leading-relaxed">
                         <strong>Social Platforms:</strong>
                       </p>
                       <div className="flex items-center gap-3 mt-2 flex-wrap justify-center md:justify-start">
@@ -835,10 +836,10 @@ export default function MapScenePage() {
                           className="flex items-center gap-2 px-3 py-2 rounded cursor-pointer transition-colors duration-200 hover:bg-red-500 group"
                         >
                           <FaInstagram
-                            className="text-white transition-colors duration-200 group-hover:text-white"
+                            className="text-black transition-colors duration-200 group-hover:text-white"
                             size={60}
                           />
-                          <span className="text-2xl text-neutral-300 transition-colors duration-200 group-hover:text-white">
+                          <span className="text-2xl text-black transition-colors duration-200 group-hover:text-white">
                             Instagram
                           </span>
                         </a>
@@ -847,17 +848,17 @@ export default function MapScenePage() {
                   )}
                   {selectedUni === "usyd" && (
                     <>
-                      <h3 className="text-white text-4xl font-semibold">
+                      <h3 className="text-black text-4xl font-semibold">
                         PPIA University of Sydney
                       </h3>
-                      <hr className="border border-neutral-500 w-32 mx-auto md:mx-0" />
-                      <p className="text-neutral-300 text-2xl leading-relaxed">
+                      <hr className="border border-black w-32 mx-auto md:mx-0" />
+                      <p className="text-black text-2xl leading-relaxed">
                         <strong>President:</strong> Clifford Suryana
                       </p>
-                      <p className="text-neutral-300 text-2xl leading-relaxed break-all">
+                      <p className="text-black text-2xl leading-relaxed break-all">
                         <strong>Email:</strong> ppia.sydneyuni@gmail.com
                       </p>
-                      <p className="text-neutral-300 text-2xl leading-relaxed">
+                      <p className="text-black text-2xl leading-relaxed">
                         <strong>Social Platforms:</strong>
                       </p>
                       <div className="flex items-center gap-3 mt-2 flex-wrap justify-center md:justify-start">
@@ -868,10 +869,10 @@ export default function MapScenePage() {
                           className="flex items-center gap-2 px-3 py-2 rounded cursor-pointer transition-colors duration-200 hover:bg-red-500 group"
                         >
                           <FaInstagram
-                            className="text-white transition-colors duration-200 group-hover:text-white"
+                            className="text-black transition-colors duration-200 group-hover:text-white"
                             size={60}
                           />
-                          <span className="text-2xl text-neutral-300 transition-colors duration-200 group-hover:text-white">
+                          <span className="text-2xl text-black transition-colors duration-200 group-hover:text-white">
                             Instagram
                           </span>
                         </a>
@@ -880,17 +881,17 @@ export default function MapScenePage() {
                   )}
                   {selectedUni === "unsw" && (
                     <>
-                      <h3 className="text-white text-4xl font-semibold">
+                      <h3 className="text-black text-4xl font-semibold">
                         PPIA University of New South Wales
                       </h3>
-                      <hr className="border border-neutral-500 w-32 mx-auto md:mx-0" />
-                      <p className="text-neutral-300 text-2xl leading-relaxed">
+                      <hr className="border border-black w-32 mx-auto md:mx-0" />
+                      <p className="text-black text-2xl leading-relaxed">
                         <strong>President:</strong> Winston Ignatius Tjahjadi
                       </p>
-                      <p className="text-neutral-300 text-2xl leading-relaxed break-all">
+                      <p className="text-black text-2xl leading-relaxed break-all">
                         <strong>Email:</strong> unsw.ppia@gmail.com
                       </p>
-                      <p className="text-neutral-300 text-2xl leading-relaxed">
+                      <p className="text-black text-2xl leading-relaxed">
                         <strong>Social Platforms:</strong>
                       </p>
                       <div className="flex items-center gap-3 mt-2 flex-wrap justify-center md:justify-start">
@@ -901,10 +902,10 @@ export default function MapScenePage() {
                           className="flex items-center gap-2 px-3 py-2 rounded cursor-pointer transition-colors duration-200 hover:bg-red-500 group"
                         >
                           <FaInstagram
-                            className="text-white transition-colors duration-200 group-hover:text-white"
+                            className="text-black transition-colors duration-200 group-hover:text-white"
                             size={60}
                           />
-                          <span className="text-2xl text-neutral-300 transition-colors duration-200 group-hover:text-white">
+                          <span className="text-2xl text-black transition-colors duration-200 group-hover:text-white">
                             Instagram
                           </span>
                         </a>
@@ -918,8 +919,8 @@ export default function MapScenePage() {
 
           {/* Modal Overlay */}
           {isModalOpen && (
-            <div className="fixed inset-0 z-50 bg-black bg-opacity-90 flex items-center justify-center p-4">
-              <div className="relative w-full max-w-6xl bg-neutral-900 rounded-xl overflow-hidden flex flex-col md:flex-row">
+            <div className="fixed inset-0 z-50 bg-amber-50 bg-opacity-90 flex items-center justify-center p-4">
+              <div className="relative w-full max-w-6xl bg-neutral-700 rounded-xl overflow-hidden flex flex-col md:flex-row">
                 {/* Left Text */}
                 <div className="w-full md:w-1/3 p-6 text-white flex flex-col gap-4">
                   <h3 className="text-3xl font-semibold">
@@ -933,7 +934,7 @@ export default function MapScenePage() {
                     {selectedUni === "usyd" && "Quadrangle Building"}
                     {selectedUni === "unsw" && "Main Library"}
                   </p>
-                  <p className="text-2xl text-neutral-300">
+                  <p className="text-2xl text-wite">
                     {selectedUni === "uts" &&
                       "UTS Library’s Building 2 is a striking contemporary hub of knowledge and collaboration. Wrapped in a bold geometric façade, it reimagines the library as an open, light-filled space where flexible learning zones, quiet nooks, and cutting-edge digital resources converge. This dynamic building embodies UTS’s spirit of innovation, blending vibrant communal areas with contemplative spaces to inspire discovery."}
                     {selectedUni === "usyd" &&

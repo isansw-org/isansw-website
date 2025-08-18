@@ -215,11 +215,11 @@ export default function Experience(props) {
         <Html position={[position[0] + 1.35, position[1] + 1.7, position[2]]} distanceFactor={3} center>
           <div style={{
             whiteSpace: "nowrap",
-            background: "rgba(0,0,0,0.7)",
+            background: "fffbeb",
             padding: "8px 12px",
             borderRadius: "6px",
             fontSize: "14px",
-            color: "white",
+            color: "black",
             fontWeight: "600",
             display: "inline-block"
           }}>
@@ -232,11 +232,11 @@ export default function Experience(props) {
         <Html position={[position[0] + 2.8, position[1] + 0.8, position[2]]} distanceFactor={3.5} center>
           <div style={{
             whiteSpace: "nowrap",
-            background: "rgba(0,0,0,0.7)",
+            background: "fffbeb",
             padding: "8px 12px",
             borderRadius: "6px",
             fontSize: "14px",
-            color: "white",
+            color: "black",
             fontWeight: "600",
             display: "inline-block"
           }}>
@@ -260,8 +260,8 @@ export default function Experience(props) {
               setPinOffsets({});
             }}
             style={{
-              background: "white",
-              color: "black",
+              background: "red",
+              color: "white",
               padding: "8px 12px",
               borderRadius: "6px",
               fontWeight: "600",

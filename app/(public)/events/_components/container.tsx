@@ -1,18 +1,19 @@
 "use client";
 
-import Image from "next/image";
+import Image, { type StaticImageData } from "next/image";
 import Link from "next/link";
 import { ArrowRight } from "lucide-react";
 
 type Props = {
   month: string; // e.g. "MAR"
-  day: string | number; // e.g. "03"
-  title: string; // e.g. "Domienator"
-  subtitle?: string; // e.g. "Isa’s Indomie Competition"
+  day: string | number; // e.g. 3 or "03"
+  title: string;
+  subtitle?: string;
   description: string;
-  imageSrc: string; // /images/your-event.jpg
-  imageAlt: string;
+  image?: string | StaticImageData; // <-- optional; string or static import
+  imageAlt?: string; // optional; defaults to title
   href: string; // link to event page
+  showDivider?: boolean; // default: true
 };
 
 export default function EventRow({
@@ -21,30 +22,48 @@ export default function EventRow({
   title,
   subtitle,
   description,
-  imageSrc,
+  image,
   imageAlt,
   href,
+  showDivider = true,
 }: Props) {
+  const formattedDay = String(day).padStart(2, "0");
+
+  // Treat empty strings as "no image"
+  const hasImage =
+    image !== undefined &&
+    !(typeof image === "string" && image.trim().length === 0);
+
+  // Optional fallback (ensure the file exists if you use it)
+  const fallback = "/image/placeholder.png";
+  const imgSrc = hasImage ? (image as string | StaticImageData) : fallback;
+
   return (
     <section className="bg-amber-50">
       <div className="mx-auto max-w-6xl px-4 py-10">
-        <div className="grid grid-cols-[72px_minmax(260px,1fr)_minmax(320px,1.1fr)] gap-8 items-start">
+        <div className="grid grid-cols-1 md:grid-cols-[72px_minmax(260px,1fr)_minmax(320px,1.1fr)] gap-6 md:gap-8 items-start">
           {/* Date */}
           <div className="pt-2 text-3xl font-bold leading-none tracking-tight text-black">
             <div className="uppercase">{month}</div>
-            <div className="mt-2">{String(day).padStart(2, "0")}</div>
+            <div className="mt-2">{formattedDay}</div>
           </div>
 
           {/* Image */}
           <div className="relative aspect-[4/3] w-full overflow-hidden rounded-sm bg-neutral-300">
-            {/* replace the gray box with the real image */}
-            <Image
-              src={imageSrc}
-              alt={imageAlt}
-              fill
-              className="object-cover"
-              sizes="(max-width: 1024px) 100vw, 50vw"
-            />
+            {hasImage ? (
+              <Image
+                src={imgSrc}
+                alt={imageAlt || title}
+                fill
+                className="object-cover"
+                sizes="(max-width: 1024px) 100vw, 50vw"
+                priority={false}
+              />
+            ) : (
+              <div className="absolute inset-0 grid place-items-center text-sm text-neutral-600">
+                No image
+              </div>
+            )}
           </div>
 
           {/* Content */}
@@ -70,10 +89,12 @@ export default function EventRow({
         </div>
       </div>
 
-      {/* bottom line */}
-      <div className="mx-auto max-w-6xl px-4">
-        <div className="h-[2px] w-full bg-red-500/90" />
-      </div>
+      {/* Optional container-width divider */}
+      {showDivider && (
+        <div className="mx-auto max-w-6xl px-4">
+          <div className="h-[2px] w-full bg-red-500/90" />
+        </div>
+      )}
     </section>
   );
 }

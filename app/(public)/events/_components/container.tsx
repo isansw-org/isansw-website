@@ -5,14 +5,14 @@ import Link from "next/link";
 import { ArrowRight } from "lucide-react";
 
 type Props = {
-  month: string;       // e.g. "MAR"
-  day: string | number;// e.g. "03"
-  title: string;       // e.g. "Domienator"
-  subtitle?: string;   // e.g. "Isa’s Indomie Competition"
+  month: string; // e.g. "MAR"
+  day: string | number; // e.g. "03"
+  title: string; // e.g. "Domienator"
+  subtitle?: string; // e.g. "Isa’s Indomie Competition"
   description: string;
-  imageSrc: string;    // /images/your-event.jpg
+  imageSrc: string; // /images/your-event.jpg
   imageAlt: string;
-  href: string;        // link to event page
+  href: string; // link to event page
 };
 
 export default function EventRow({
@@ -27,7 +27,6 @@ export default function EventRow({
 }: Props) {
   return (
     <section className="bg-amber-50">
-
       <div className="mx-auto max-w-6xl px-4 py-10">
         <div className="grid grid-cols-[72px_minmax(260px,1fr)_minmax(320px,1.1fr)] gap-8 items-start">
           {/* Date */}
@@ -72,7 +71,9 @@ export default function EventRow({
       </div>
 
       {/* bottom line */}
-      <div className="h-[3px] w-full bg-red-500/90" />
+      <div className="mx-auto max-w-6xl px-4">
+        <div className="h-[2px] w-full bg-red-500/90" />
+      </div>
     </section>
   );
 }

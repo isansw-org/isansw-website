@@ -223,13 +223,13 @@ export default function Experience(props) {
             fontWeight: "600",
             display: "inline-block"
           }}>
-            Click on the NSW map to start exploring universities and see where each campus is located.
+            Click on the NSW map to start exploring universities <br />and see where each campus is located.
           </div>
         </Html>
       )}
 
       {active && !expandedPin && (
-        <Html position={[position[0] + 2.8, position[1] + 0.8, position[2]]} distanceFactor={3.5} center>
+        <Html position={[position[0] + 2.2, position[1] + 0.4, position[2]]} distanceFactor={3.3} center>
           <div style={{
             whiteSpace: "nowrap",
             background: "fffbeb",
@@ -240,7 +240,7 @@ export default function Experience(props) {
             fontWeight: "600",
             display: "inline-block"
           }}>
-            Click to explore every area and <br />discover PPIA stories from Indonesian <br />students across NSW!
+            Click to explore every area and <br />discover PPIA stories from <br /> Indonesian students across <br />NSW!
           </div>
         </Html>
       )}

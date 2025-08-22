@@ -3,23 +3,19 @@
 import { Button } from "@/components/ui/button";
 import { Separator } from "@/components/ui/separator";
 import { Eye, LogOut } from "lucide-react";
-import { useRouter } from "next/navigation";
 import Link from "next/link";
 import { SidebarTrigger } from "@/components/ui/sidebar";
 import { pages } from "@/lib/constants/site";
+// import { useRouter } from "next/navigation"; // ⬅️ remove for now
 import { AdminBreadcrumb } from "./admin-breadcrumb";
 
 export function AdminHeader() {
-  const router = useRouter();
+  // const router = useRouter(); // ⬅️ remove for now
 
   async function handleLogout() {
-    // const response = await logout();
-    // if (response.success) {
-    //   toast.success(response.message);
-    //   router.push(sitePages.auth.login.url);
-    // } else {
-    //   toast.error(response.message);
-    // }
+    // Backend not wired yet — no redirect.
+    // You can toast here if you have a toast system:
+    // toast.info("Logout coming soon");
   }
 
   return (

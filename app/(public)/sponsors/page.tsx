@@ -46,7 +46,8 @@ export default function Home() {
 
     // Soft Reflections
     const pmrem = new THREE.PMREMGenerator(renderer);
-    scene.environment = pmrem.fromScene(new RoomEnvironment(), 0.04).texture;
+    const envRT = pmrem.fromScene(new RoomEnvironment(), 0.04);
+    scene.environment = envRT.texture;
 
     scene.background = new THREE.Color("#fffbeb");
 
@@ -68,7 +69,7 @@ export default function Home() {
     rim.position.set(0, 6, -6);
     scene.add(rim);
 
-    //Load GLTF
+    // Load GLTF
     let model: THREE.Object3D | null = null;
     const loader = new GLTFLoader();
 
@@ -134,7 +135,7 @@ export default function Home() {
       (err) => console.error("GLTF load error:", err)
     );
 
-    //Resize
+    // Resize
     const onResize = () => {
       const { clientWidth, clientHeight } = container;
       camera.aspect = clientWidth / clientHeight;
@@ -144,24 +145,24 @@ export default function Home() {
     const ro = new ResizeObserver(onResize);
     ro.observe(container);
 
-    //Animation
-    const clock = new THREE.Clock();
+    // Animation
     let raf = 0;
     const animate = () => {
       raf = requestAnimationFrame(animate);
-      const dt = clock.getDelta();
       controls.update();
       if (model) model.rotation.y += 0.001; // tiny idle spin (optional)
       renderer.render(scene, camera);
     };
     animate();
 
-    //Cleanup
+    // Cleanup
     return () => {
       cancelAnimationFrame(raf);
       ro.disconnect();
       controls.dispose();
       renderer.dispose();
+      envRT.dispose();
+      pmrem.dispose();
       if (container.contains(renderer.domElement))
         container.removeChild(renderer.domElement);
       scene.traverse((obj) => {

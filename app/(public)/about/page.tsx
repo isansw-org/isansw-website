@@ -13,19 +13,21 @@ export default function Home() {
           <div className="text-xl text-center grid space-y-4">
             <h3 className="font-bold text-4xl pb-4 text-red-500">Our Story</h3>
             <p className="max-w-2xl mx-auto">
-              Founded by and for Indonesian studets, ISANSW staretd as a way to
+              Founded by and for Indonesian students, ISANSW started as a way to
               stay connected far from home. From humble beginnings, we've grown
               into a cross-campus community that celebrates Indonesian identity,
-              supports student life, and create memorable experienced for
+              supports student life, and creates memorable experiences for
               students across New South Wales.
             </p>
           </div>
         </div>
       </main>
+
       <VisionMission />
+
       <div className="bg-amber-50 text-black py-20">
-        <div className="px-1 py-1 rounded-2xl bg-gradient-to-b from-rose-400 via-red-500 to-yellow-400 mx-auto max-w-2xl mt-16>">
-          <div className="relative bg-red-500 text-white px-10 py-10 rounded-2xl shadow-md max-w-2xl w-full text-center mx-auto ">
+        <div className="px-1 py-1 rounded-2xl bg-gradient-to-b from-rose-400 via-red-500 to-yellow-400 mx-auto max-w-2xl mt-16">
+          <div className="relative bg-red-500 text-white px-10 py-10 rounded-2xl shadow-md max-w-2xl w-full text-center mx-auto">
             {/* Corner dots */}
             {[
               "top-2 left-2",
@@ -52,6 +54,7 @@ export default function Home() {
           </div>
         </div>
       </div>
+
       <Footer />
     </>
   );

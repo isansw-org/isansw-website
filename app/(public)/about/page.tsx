@@ -3,6 +3,7 @@ import Footer from "../../../components/common/footer";
 import Hero from "./_components/hero";
 import VisionMission from "./_components/visionmission";
 
+import {Sprout, Handshake, Globe} from "lucide-react";
 export default function Home() {
   return (
     <>
@@ -54,7 +55,6 @@ export default function Home() {
           </div>
         </div>
       </div>
-
       <Footer />
     </>
   );

@@ -65,11 +65,21 @@ const deals: Deal[] = [
 ];
 
 const sponsors = [
-  "/image/yochi_Logo.jpeg",
-  "/image/yochi_Logo.jpeg",
-  "/image/yochi_Logo.jpeg",
-  "/image/yochi_Logo.jpeg",
-  "/image/yochi_Logo.jpeg",
+  "/image/little_IndoTown.png",
+  "/image/dapurSate.png",
+  "/image/kenanganCoffee.png",
+  "/image/bintangBro.png",
+  "/image/sweetRepublic.png",
+  "/image/dedyCafe.png",
+  "/image/viciousCycle.jfif",
+  "/image/ayamGoreng99.png",
+  "/image/squidPocha.png",
+  "/image/wooTea.png",
+  "/image/escapeHunt.jpg",
+  "/image/quizRoom.jpg",
+  "/image/virtualRoom.png",
+  "/image/geprekInAustralia.jfif",
+  "/image/innitCafe.png",
 ];
 
 export default function Home() {
@@ -220,7 +230,7 @@ export default function Home() {
         </p>
 
         <div className="mt-6">
-          <AutoScroller speedSec={18} className="py-6" gapClass="gap-10">
+          <AutoScroller speedSec={80} className="py-6" gapClass="gap-10">
             {sponsors.map((src, i) => (
               <div
                 key={i}

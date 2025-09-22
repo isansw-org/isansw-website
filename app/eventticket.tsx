@@ -1,4 +1,3 @@
-// app/_components/EventTicket.tsx
 "use client";
 
 import Image from "next/image";
@@ -8,50 +7,76 @@ export type EventItem = {
   id: string;
   title: string;
   subtitle: string;
-  date: string;   // e.g. "03/05/2025"
-  image: string;  // /public path
+  date: string;
+  image: string; // e.g. "/events/domienator.jpg"
   href?: string;
 };
 
-export default function eventticket({ e }: { e: EventItem }) {
+export default function EventTicket({ e }: { e: EventItem }) {
   return (
-    <div className="relative w-[260px] rounded-3xl bg-gradient-to-b from-red-600 to-orange-400 p-3 text-white shadow-xl ring-1 ring-black/10">
+    <div
+      className="relative w-[260px] rounded-3xl bg-gradient-to-b from-red-600 to-orange-400 p-4 
+                 text-white shadow-xl ring-1 ring-black/10 transform transition 
+                 duration-300 ease-in-out hover:scale-105 hover:opacity-100 group-hover:opacity-60"
+    >
       {/* Poster */}
       <div className="overflow-hidden rounded-2xl bg-white">
-        <Image
-          src={e.image}
-          alt={e.title}
-          width={400}
-          height={300}
-          className="h-[180px] w-full object-cover"
-        />
+        <div className="relative">
+          <Image
+            src={e.image}
+            alt={e.title}
+            width={600}
+            height={800}
+            priority
+            className="h-[280px] w-full rounded-[14px] object-cover"
+          />
+          {/* inner border inside the picture */}
+          <div className="pointer-events-none absolute inset-[6px] rounded-[10px] ring-2 ring-white/25" />
+        </div>
       </div>
 
       {/* Body */}
       <div className="pt-4">
-        <h3 className="text-xl font-extrabold tracking-wide">{e.title}</h3>
-        <div className="my-2 h-[2px] w-14 rounded bg-white/70" />
-        <p className="min-h-[48px] text-sm/5 text-white/90">{e.subtitle}</p>
-      </div>
+        {/* thin solid divider */}
+        <div className="my-2 border-t-2 border-white/70" />
 
-      {/* Ticket bar */}
-      <div className="relative mt-4 rounded-2xl bg-white/10 px-3 py-3">
-        {/* notches */}
-        <span className="absolute -left-3 top-1/2 h-6 w-6 -translate-y-1/2 rounded-full bg-amber-50" />
-        <span className="absolute -right-3 top-1/2 h-6 w-6 -translate-y-1/2 rounded-full bg-amber-50" />
+        {/* Title & subtitle */}
+        <h3 className="text-3xl font-extrabold tracking-wide text-center leading-tight">
+          {e.title}
+        </h3>
+        <p className="mt-1 text-base italic opacity-90 text-left leading-snug">
+          {e.subtitle}
+        </p>
 
-        <div className="flex items-center justify-between gap-2">
-          <Link
-            href={e.href ?? "#"}
-            className="inline-flex items-center rounded-full bg-white px-3 py-1.5 text-xs font-semibold text-red-600 shadow hover:translate-y-[-1px] focus:outline-none focus:ring-4 focus:ring-white/40"
-          >
-            Learn More →
-          </Link>
-          <div className="text-right">
-            <p className="text-[11px] uppercase tracking-widest text-white/80">
-              {e.date}
-            </p>
-            <div className="mt-1 h-1 w-16 rounded bg-white/70" />
+        {/* Date */}
+        <p className="mt-7 text-sm font-semibold text-white/95 text-right pr-1">
+          {e.date}
+        </p>
+
+        {/* dashed divider */}
+        <div className="my-3 border-t-2 border-dashed border-white/70" />
+
+        {/* Bottom row */}
+        <div className="mt-4 flex items-center justify-between">
+          {e.href ? (
+            <Link
+              href={e.href}
+              className="rounded-lg bg-white px-3 py-1 text-lg font-bold text-orange-400 
+                         transition-colors duration-200 hover:bg-gray-200"
+            >
+              Learn More
+            </Link>
+          ) : (
+            <span />
+          )}
+
+          {/* Barcode */}
+          <div className="h-6 w-12 overflow-hidden">
+            <div className="flex h-full w-full space-x-[2px]">
+              {Array.from({ length: 12 }).map((_, i) => (
+                <div key={i} className="h-full w-[2px] bg-white" />
+              ))}
+            </div>
           </div>
         </div>
       </div>

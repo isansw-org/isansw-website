@@ -41,6 +41,7 @@ export default function Home() {
 
     // Controls
     const controls = new OrbitControls(camera, renderer.domElement);
+    controls.enabled = false;
     controls.enableDamping = true;
     controls.target.set(0, 1.0, 0);
 

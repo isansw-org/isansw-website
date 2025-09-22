@@ -216,9 +216,9 @@ export default function Experience(props) {
           <div style={{
             whiteSpace: "nowrap",
             background: "fffbeb",
-            padding: "8px 12px",
+            padding: "12px",
             borderRadius: "6px",
-            fontSize: "14px",
+            fontSize: "25px",
             color: "black",
             fontWeight: "600",
             display: "inline-block"
@@ -229,7 +229,7 @@ export default function Experience(props) {
       )}
 
       {active && !expandedPin && (
-        <Html position={[position[0] + 2.2, position[1] + 0.4, position[2]]} distanceFactor={3.3} center>
+        <Html position={[position[0] + 2.4, position[1] + 0.6, position[2]]} distanceFactor={3.3} center>
           <div style={{
             whiteSpace: "nowrap",
             background: "fffbeb",

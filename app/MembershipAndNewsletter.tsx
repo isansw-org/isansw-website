@@ -59,9 +59,10 @@ export default function MembershipAndNewsletter() {
             <h2 className="text-2xl font-extrabold tracking-wide">
               Wanna Know What We’re All About?
             </h2>
-            <p className="mx-auto mt-4 max-w-2xl text-sm leading-6 text-white/90">
-              Subscribe for updates, insights, and student‑focused resources—direct to your
-              inbox. Stay connected with a community that supports you.
+            <p className="mx-auto mt-4 max-w-2xl text-m leading-6 text-white/90">
+              Subscribe for updates, insights, and student‑focused resources
+              that directs to your inbox. Stay connected with a community that
+              supports you.
             </p>
 
             <a

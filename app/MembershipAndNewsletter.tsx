@@ -7,44 +7,42 @@ export default function MembershipAndNewsletter() {
 
   return (
     <section className="bg-amber-50">
-      {/* Red gradient backdrop */}
-      <div className="relative overflow-hidden">
-        <div className="h-10 w-full bg-gradient-to-b from-amber-50 to-red-500/70" />
-
-        <div className="mx-auto -mt-6 max-w-6xl px-4 pb-16">
+      <div className="relative">
+        {/* Top area (no stripe) */}
+        <div className="mx-auto max-w-6xl px-4 py-20">
           {/* Membership CTA card */}
-          <div className="rounded-3xl border-4 border-orange-200/80 bg-white/80 p-6 shadow-[0_16px_40px_rgba(0,0,0,0.18)] ring-1 ring-black/10 backdrop-blur-sm md:p-8">
-            <div className="relative grid grid-cols-1 items-center gap-6 md:grid-cols-[340px,1fr]">
-              {/* decorative circles */}
+          <div className="relative rounded-3xl border-4 border-orange-200/80 bg-white/80 p-8 md:p-12 shadow-[0_16px_40px_rgba(0,0,0,0.18)] ring-1 ring-black/10 backdrop-blur-sm">
+            <div className="relative grid grid-cols-1 items-center gap-10 md:grid-cols-2 min-h-[360px] md:min-h-[420px]">
+              {/* Decorative circles */}
               <div className="pointer-events-none absolute -left-10 -top-10 h-40 w-40 rounded-full bg-orange-200/50 blur-md" />
               <div className="pointer-events-none absolute left-44 top-16 h-36 w-36 rounded-full bg-orange-300/40 blur-md" />
 
               {/* Card / logo */}
-              <div className="relative z-10 flex items-center justify-center">
-                <div className="rounded-2xl bg-red-600/90 p-6 text-white ring-4 ring-red-200/60 shadow">
+              <div className="relative z-10 flex items-center justify-center md:justify-start md:order-1">
+                <div className="rounded-2xl bg-red-600 p-1 ring-red-200/60 shadow-lg">
                   <Image
-                    src="/partners/ppi-aus.png" // replace with your image
-                    alt="PPI Australia"
-                    width={340}
-                    height={210}
-                    className="h-[140px] w-[240px] rounded-lg object-contain"
+                    src="/image/ppiaCard.png" // file at /public/ppiaCard.png
+                    alt="PPIA membership card"
+                    width={450}
+                    height={290}
                     priority
+                    sizes="(min-width:1024px) 560px, (min-width:768px) 480px, 380px"
                   />
                 </div>
               </div>
 
               {/* Text */}
-              <div className="z-10">
-                <h3 className="text-2xl font-extrabold text-red-600">
+              <div className="z-10 md:order-2">
+                <h3 className="text-3xl md:text-4xl font-extrabold text-red-600">
                   Caught a case of event FOMO?
                 </h3>
-                <p className="mt-2 max-w-prose text-stone-700">
-                  Become a member today, and be part of the fun
+                <p className="mt-4 max-w-prose text-stone-700 text-lg">
+                  Become a member today, and be part of the fun.
                 </p>
 
                 <a
                   href="/membership"
-                  className="mt-6 inline-flex items-center rounded-full bg-red-600 px-6 py-3 text-sm font-semibold text-white shadow transition hover:-translate-y-0.5 focus:outline-none focus:ring-4 focus:ring-red-300"
+                  className="mt-8 inline-flex items-center rounded-full bg-red-600 px-7 py-3.5 text-sm font-semibold text-white shadow transition hover:-translate-y-0.5 focus:outline-none focus:ring-4 focus:ring-red-300"
                 >
                   Join as a Member
                 </a>
@@ -53,15 +51,21 @@ export default function MembershipAndNewsletter() {
           </div>
         </div>
 
-        {/* Deep red gradient area for newsletter */}
-        <div className="w-full bg-gradient-to-b from-red-500/70 to-red-600">
-          <div className="mx-auto max-w-4xl px-4 py-16 text-center text-white">
-            <h2 className="text-2xl font-extrabold tracking-wide">
+        {/* Cream → Red handoff (subtle blend that removes the hard edge) */}
+        <div
+          aria-hidden
+          className="pointer-events-none h-30 w-full bg-gradient-to-b from-amber-50 to-red-500/80"
+        />
+
+        {/* Newsletter band (red gradient) */}
+        <div className="w-full bg-gradient-to-b from-red-500/80 to-red-500">
+          <div className="mx-auto max-w-4xl px-4 py-20 text-center text-white">
+            <h2 className="text-2xl md:text-3xl font-extrabold tracking-wide">
               Wanna Know What We’re All About?
             </h2>
-            <p className="mx-auto mt-4 max-w-2xl text-m leading-6 text-white/90">
-              Subscribe for updates, insights, and student‑focused resources
-              that directs to your inbox. Stay connected with a community that
+            <p className="mx-auto mt-4 max-w-2xl leading-7 text-white/90">
+              Subscribe for updates, insights, and student-focused resources
+              delivered to your inbox. Stay connected with a community that
               supports you.
             </p>
 
@@ -74,7 +78,7 @@ export default function MembershipAndNewsletter() {
           </div>
         </div>
 
-        {/* Floating back-to-top button */}
+        {/* Back-to-top button */}
         <button
           aria-label="Back to top"
           onClick={scrollTop}

@@ -18,7 +18,10 @@ export const env = createEnv({
     SMTP_PORT: z.coerce.number().optional(), // optional
     SMTP_USERNAME: z.string().min(1).optional(), // optional
     SMTP_PASSWORD: z.string().min(1).optional(), // optional
-    EMAIL_SENDER_ADDRESS: z.string().min(1).optional(), // optional
+    EMAIL_SENDER_ADDRESS: z
+      .string()
+      .min(1)
+      .default("ISANSW <no-reply@isansw.org>"), // optional
     // You can also add NEXTAUTH_URL / NEXTAUTH_SECRET here if you want them validated:
     // NEXTAUTH_URL: z.string().url(),
     // NEXTAUTH_SECRET: z.string().min(1),

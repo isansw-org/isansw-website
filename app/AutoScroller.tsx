@@ -29,8 +29,7 @@ export default function AutoScroller({
         className={`ascroller-track flex ${gapClass} min-w-max will-change-transform`}
         style={
           {
-            // Use a CSS var so CSS can read it
-            ["--ascroller-speed" as any]: `${speedSec}s`,
+            "--ascroller-speed": `${speedSec}s`,
           } as React.CSSProperties
         }
       >
@@ -42,26 +41,23 @@ export default function AutoScroller({
       </div>
 
       <style jsx global>{`
-        /* animate the track */
         .ascroller .ascroller-track {
           animation: isa-scroll var(--ascroller-speed) linear infinite;
           animation-play-state: running;
         }
 
-        /* pause when hovering the strip OR any of its children */
         .ascroller:hover .ascroller-track,
         .ascroller .ascroller-track:hover {
           animation-play-state: paused;
         }
 
-        /* Seamless loop with duplicated content */
         @keyframes isa-scroll {
           from {
             transform: translateX(0);
           }
           to {
             transform: translateX(-100%);
-          } /* slide by one full copy */
+          }
         }
       `}</style>
     </div>

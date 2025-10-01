@@ -1,6 +1,4 @@
-
-import Image from 'next/image';
-import { FaInstagram, FaLinkedin } from 'react-icons/fa';
+import { FaInstagram, FaLinkedin } from "react-icons/fa";
 
 type ProfileProps = {
   name: string;
@@ -13,7 +11,6 @@ type ProfileProps = {
 export default function Profile({
   name,
   role,
-  imageSrc,
   instagramUrl,
   linkedinUrl,
 }: ProfileProps) {

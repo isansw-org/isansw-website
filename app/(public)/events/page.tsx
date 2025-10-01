@@ -6,10 +6,7 @@ import EventsHero from "./_components/eventshero";
 import EventRow from "./_components/container";
 import { useMemo, useState } from "react";
 import { Search, Filter } from "lucide-react";
-import Image from "next/image";
 import type { StaticImageData } from "next/image";
-
-// Static import (helps with blur and avoids path typos)
 import domienator from "@/public/image/domienator.png";
 
 type EventItem = {
@@ -20,7 +17,7 @@ type EventItem = {
   description: string;
   image?: string | StaticImageData;
   imageAlt?: string;
-  href: string; // can be internal (/events/slug) or external (https://instagram...)
+  href: string;
 };
 
 const EVENTS: EventItem[] = [
@@ -91,7 +88,7 @@ export default function EventsPage() {
                 className="flex-grow bg-transparent text-black placeholder-red-300 focus:outline-none"
                 aria-label="Search events"
               />
-              {/* Decorative button (filter happens on typing already) */}
+              {/* Decorative button */}
               <button
                 type="button"
                 className="ml-2 rounded-full bg-red-500 p-2 text-white transition hover:bg-red-600"
@@ -101,7 +98,7 @@ export default function EventsPage() {
               </button>
             </div>
 
-            {/* Filter Button (hook up when ready) */}
+            {/* Filter Button */}
             <button
               type="button"
               className="flex shrink-0 items-center gap-2 rounded-full bg-red-500 px-5 py-2 font-bold text-white transition hover:bg-red-600"
@@ -117,7 +114,7 @@ export default function EventsPage() {
           <div className="h-[3px] w-full bg-red-500/90" />
         </div>
 
-        {/* Rows (parent draws the dividers) */}
+        {/* Rows */}
         <div className="mx-auto max-w-6xl px-4">
           {filtered.length === 0 ? (
             <div className="rounded-xl border-2 border-dashed border-red-300 bg-white/60 p-8 text-center text-stone-700">

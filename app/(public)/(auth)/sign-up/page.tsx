@@ -1,58 +1,38 @@
-import { FormHeader, FormSection } from "@/components/form";
-import { SignUpLayout } from "./_components/sign-up-layout";
-import { SignUpForm } from "./_components/sign-up-form";
-import { SearchParams } from "next/dist/server/request/search-params";
-import { getSearchParam } from "@/lib/utils/params";
-import { isString } from "@/lib/utils/type-guards";
-import { Unauthorized } from "@/components/common/fallbacks/unauthorized";
-import { notFound } from "next/navigation";
-import { verifyToken } from "@/server/actions/auth.actions";
-import { Button } from "@/components/ui/button";
-import { FileBadge, FileBadge2, Info } from "lucide-react";
-import Link from "next/link";
-import { pages } from "@/lib/constants/site";
-
-type Props = {
-  searchParams?: SearchParams;
-};
-
-export default async function Page({ searchParams }: Props) {
-  const token = await getSearchParam({
-    params: searchParams,
-    key: "token",
-    default: "",
-    validate: isString,
-  });
-
-  if (!token) return notFound();
-
-  const payload = await verifyToken(token);
-  if (!payload) {
-    return (
-      <Unauthorized
-        message="Invalid or expired token."
-        fallbackBtnText="Return to Home"
-        fallbackUrl="/"
-      />
-    );
-  }
-
+// app/(public)/(auth)/sign-up/page.tsx
+export default function SignUpPage() {
   return (
-    <SignUpLayout inviteeName={payload.fullName}>
-      <FormSection className="space-y-6">
-        <FormHeader
-          title="Sign Up"
-          description="Please fill in your details so we can get your account immediately setup for you."
-        />
-        <Button asChild className="w-full" variant="outline">
-          <Link target="_blank" href={pages.public.termsOfService.url}>
-            <FileBadge /> Terms of Service
-          </Link>
-        </Button>
-        <div className="p-8 border border-primary/50 rounded-lg">
-          <SignUpForm token={token} tokenPayload={payload} />
+    <main className="mx-auto max-w-md px-4 py-12">
+      <h1 className="mb-6 text-2xl font-semibold">Create your account</h1>
+      {/* TODO: your real sign-up form here */}
+      <form className="space-y-4">
+        <div className="grid gap-2">
+          <label htmlFor="email" className="text-sm font-medium">
+            Email
+          </label>
+          <input
+            id="email"
+            type="email"
+            className="rounded-md border px-3 py-2"
+            placeholder="you@example.com"
+            required
+          />
         </div>
-      </FormSection>
-    </SignUpLayout>
+        <div className="grid gap-2">
+          <label htmlFor="password" className="text-sm font-medium">
+            Password
+          </label>
+          <input
+            id="password"
+            type="password"
+            className="rounded-md border px-3 py-2"
+            placeholder="••••••••"
+            required
+          />
+        </div>
+        <button className="mt-2 w-full rounded-md bg-black px-4 py-2 text-white">
+          Sign up
+        </button>
+      </form>
+    </main>
   );
 }

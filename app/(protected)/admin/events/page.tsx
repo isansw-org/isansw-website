@@ -1,6 +1,8 @@
 import { authorize } from "@/server/actions/auth.actions";
 import { redirect } from "next/navigation";
-import EventForm from  "./_components/event-form";
+import EventForm from "./_components/event-form";
+
+export const dynamic = "force-dynamic";
 
 export default async function Page() {
   const { accessAllowed, session } = await authorize({ loggedIn: true });

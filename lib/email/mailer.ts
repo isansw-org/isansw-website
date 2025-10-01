@@ -8,11 +8,6 @@ type NodemailerTransportParams = {
   html: string;
 };
 
-/**
- * Build SMTP config from process.env.
- * - In PROD: require host/user/pass (throw if missing)
- * - In DEV/Preview: fall back to harmless defaults
- */
 export const getSmtpConfig = () => {
   const host = process.env.SMTP_HOST;
   const port = Number(process.env.SMTP_PORT ?? 587);
@@ -20,13 +15,8 @@ export const getSmtpConfig = () => {
   const pass = process.env.SMTP_PASSWORD ?? process.env.SMTP_PASS;
 
   if (process.env.NODE_ENV === "production") {
-    if (!host || !user || !pass) {
-      throw new Error(
-        "Missing SMTP config (SMTP_HOST/SMTP_USERNAME/SMTP_PASSWORD)."
-      );
-    }
+    if (!host || !user || !pass) throw new Error("Missing SMTP config");
   }
-
   return {
     host: host ?? "localhost",
     port,
@@ -35,10 +25,6 @@ export const getSmtpConfig = () => {
   };
 };
 
-/**
- * Create the email payload using a template.
- * Ensures "from" is always a string (fallback in dev/preview).
- */
 export const createEmail = async ({
   to,
   subject,
@@ -50,42 +36,30 @@ export const createEmail = async ({
   template: EmailTemplates;
   context: Record<string, string>;
 }): Promise<NodemailerTransportParams> => {
-  const emailHtml = await getEmailTemplate(template, context);
-
+  const html = await getEmailTemplate(template, context);
   const from =
     process.env.EMAIL_SENDER_ADDRESS ??
     (process.env.NODE_ENV === "production"
       ? (() => {
-          throw new Error(
-            "EMAIL_SENDER_ADDRESS is not set (required in production)."
-          );
+          throw new Error("EMAIL_SENDER_ADDRESS not set");
         })()
       : "ISANSW <no-reply@isansw.org>");
-
-  return { from, to, subject, html: emailHtml };
+  return { from, to, subject, html };
 };
 
-/**
- * Call your emails API route to send the email.
- * Uses APP_ORIGIN only at runtime.
- */
 export const sendEmail = async (email: NodemailerTransportParams) => {
   const origin =
     process.env.APP_ORIGIN ??
     (process.env.NODE_ENV === "production"
       ? (() => {
-          throw new Error("APP_ORIGIN is not set (required in production).");
+          throw new Error("APP_ORIGIN not set");
         })()
       : "http://localhost:3000");
-
-  const response = await fetch(`${origin}/api/emails`, {
+  const res = await fetch(`${origin}/api/emails`, {
     method: "POST",
     headers: { "Content-Type": "application/json" },
     body: JSON.stringify(email),
   });
-
-  const responsePayload: { success: boolean; message: string } =
-    await response.json();
-
-  return { requestMade: response.ok, responsePayload };
+  const payload: { success: boolean; message: string } = await res.json();
+  return { requestMade: res.ok, responsePayload: payload };
 };

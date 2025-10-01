@@ -45,14 +45,31 @@ export const createEmail = async ({
 }): Promise<NodemailerTransportParams> => {
   const emailHtml = await getEmailTemplate(template, context);
 
+  // ✅ Always ensure "from" is a string
+  const from =
+    env.EMAIL_SENDER_ADDRESS ??
+    (process.env.NODE_ENV === "production"
+      ? (() => {
+          throw new Error(
+            "EMAIL_SENDER_ADDRESS is not set (required in production)."
+          );
+        })()
+      : "ISANSW <no-reply@isansw.org>");
+
   return {
-    from: env.EMAIL_SENDER_ADDRESS,
-    to: to,
-    subject: subject,
+    from,
+    to,
+    subject,
     html: emailHtml,
   };
 };
 
+/**
+ * Sends an email by calling the API route.
+ *
+ * @param email - The email object to send.
+ * @returns An object containing request success and the API response payload.
+ */
 export const sendEmail = async (email: NodemailerTransportParams) => {
   const response = await fetch(`${env.APP_ORIGIN}/api/emails`, {
     method: "POST",
@@ -67,6 +84,6 @@ export const sendEmail = async (email: NodemailerTransportParams) => {
 
   return {
     requestMade: response.ok,
-    responsePayload: responsePayload,
+    responsePayload,
   };
 };

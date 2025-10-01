@@ -113,7 +113,7 @@ export default function EventsPage() {
 
         {/* Heading */}
         <div className="mx-auto max-w-6xl px-4 py-10">
-          <h2 className="text-3xl font-bold text-black">Upcoming Events</h2>
+          <h2 className="text-3xl font-bold text-black">Past Events</h2>
           <div className="h-[3px] w-full bg-red-500/90" />
         </div>
 

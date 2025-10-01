@@ -4,8 +4,8 @@ import Image from "next/image";
 
 type Props = {
   images: { src: string; alt?: string }[];
-  height?: number;   // px
-  width?: number;    // px
+  height?: number; // px
+  width?: number; // px
   speedSec?: number; // seconds per loop
 };
 
@@ -25,8 +25,9 @@ export default function AutoCarousel({
         <div className="pointer-events-none absolute inset-y-0 left-0 w-16 bg-gradient-to-r from-amber-50 to-transparent" />
         <div className="pointer-events-none absolute inset-y-0 right-0 w-16 bg-gradient-to-l from-amber-50 to-transparent" />
 
+        {/* Carousel track */}
         <div
-          className="flex gap-6 will-change-transform"
+          className="flex gap-6 will-change-transform carousel-track"
           style={{
             animation: `isansw-scroll ${speedSec}s linear infinite`,
           }}
@@ -43,23 +44,25 @@ export default function AutoCarousel({
                 width={width}
                 height={height}
                 className="h-full w-full object-cover"
-                priority={i < 4}
+                priority={i < 3} // only first few load eagerly
               />
             </div>
           ))}
         </div>
 
-        {/* Pause on hover */}
+        {/* Styles */}
         <style jsx>{`
-          .group:hover div[style*="isansw-scroll"] {
+          /* Pause on hover */
+          .group:hover .carousel-track {
             animation-play-state: paused;
           }
+
           @keyframes isansw-scroll {
             from {
               transform: translateX(0);
             }
             to {
-              transform: translateX(-50%);
+              transform: translateX(-100%);
             }
           }
         `}</style>

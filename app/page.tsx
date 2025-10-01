@@ -19,7 +19,7 @@ const events: EventItem[] = [
     subtitle: "~ISA’s Indomie Competition~",
     date: "03/05/2025",
     image: "/image/domienator.png",
-    href: "/events/domienator",
+    href: "/events",
   },
   {
     id: "2",
@@ -27,7 +27,7 @@ const events: EventItem[] = [
     subtitle: "~ISA’s Indomie Competition~",
     date: "03/05/2025",
     image: "/image/domienator.png",
-    href: "/events/domienator",
+    href: "/events",
   },
   {
     id: "3",
@@ -35,53 +35,151 @@ const events: EventItem[] = [
     subtitle: "~ISA’s Indomie Competition~",
     date: "03/05/2025",
     image: "/image/domienator.png",
-    href: "/events/domienator",
+    href: "/events",
   },
 ];
 
 const deals: Deal[] = [
   {
-    brand: "Yo-Chi",
+    brand: "Kenangan Coffee",
     headline: "Discount: 10% off",
-    detail: "total bill",
-    image: "/image/yochi_Logo.jpeg",
+    detail: "total bill when dining",
+    image: "/image/kenangancoffee.jpg",
   },
   {
-    brand: "Yo-Chi",
+    brand: "Bintang Bro",
     headline: "Discount: 10% off",
-    detail: "total bill",
-    image: "/image/yochi_Logo.jpeg",
+    detail:
+      "total bill and Buy 3 main meals, get 1 free. (only at Westfield City Mall)",
+    image: "/image/bintangbrofood.png",
   },
   {
-    brand: "Yo-Chi",
+    brand: "Sweet Republic",
     headline: "Discount: 10% off",
-    detail: "total bill",
-    image: "/image/yochi_Logo.jpeg",
+    detail:
+      "total bill (Free selected toppings and sauces, only on Mon - Fri, 2:30 - 4:00 pm)",
+    image: "/image/sweetrepublicfood.jpeg",
   },
   {
-    brand: "Yo-Chi",
+    brand: "Dedy's Cafe",
     headline: "Discount: 10% off",
     detail: "total bill",
-    image: "/image/yochi_Logo.jpeg",
+    image: "/image/dedyscafefood.jpeg",
+  },
+  {
+    brand: "Vicious Cycle",
+    headline: "Discount: 20% off",
+    detail: "for 5, 10, or 20 class credit packages",
+    image: "/image/viciouscycleimage.jpg",
+  },
+  {
+    brand: "Ayam Goreng 99",
+    headline: "Discount: 10% off",
+    detail: "total bill",
+    image: "/image/ayamgoreng99food.png",
+  },
+  {
+    brand: "Squid Pocha",
+    headline: "Discount: 10% off",
+    detail: "total bill on (SUN - THU)",
+    image: "/image/squidpochafood.jpeg",
+  },
+  {
+    brand: "PANDA",
+    headline: "Free entry",
+    detail: "for PPIA members before 11pm",
+    image: "/image/pandaimage.png",
+  },
+  {
+    brand: "WooTea",
+    headline: "Discount: 10% off",
+    detail: "total bill",
+    image: "/image/wooteadrink.png",
+  },
+  {
+    brand: "EscapeHunt",
+    headline: "Discount: 15% off",
+    detail: "total bill with code (PPIA15)",
+    image: "/image/escapehuntplace.jpg",
+  },
+  {
+    brand: "Quiz Room",
+    headline: "Discount: 15% off",
+    detail: "total bill with code (PPIA15)",
+    image: "/image/quizroomplace.jpg",
+  },
+  {
+    brand: "Virtual Room",
+    headline: "Discount: 15% off",
+    detail: "total bill with code (PPIA15)",
+    image: "/image/virtualroomplace.jpeg",
+  },
+  {
+    brand: "Geprek in Sydney",
+    headline: "FREE",
+    detail: "Teh kotak with (min purchase of 1 Geprek Bowl)",
+    image: "/image/geprekinsydneyfood.jpeg",
+  },
+  {
+    brand: "Innit Cafe & Bar",
+    headline: "Discount: 10% off",
+    detail: "all food and drinks anytime and anyday (Excluding the bar side)",
+    image: "/image/innitcafefood.jpeg",
+  },
+  {
+    brand: "Kangen Indo",
+    headline: "Discount: 10% off base",
+    detail: "(free pangsit with every purchase)",
+    image: "/image/kangenindofood.png",
+  },
+  {
+    brand: "Truffles",
+    headline: "Discount: 10% off",
+    detail: "total bill + additional 5% off with google review",
+    image: "/image/trufflesfood.jpeg",
+  },
+  {
+    brand: "Miezilla",
+    headline: "Discount: 15% off",
+    detail: "total bill (need to show PPIA Card)",
+    image: "/image/miezillafood.jpeg",
+  },
+  {
+    brand: "Hairzone Sydney",
+    headline: "Discount: 15% off",
+    detail: "on all services",
+    image: "/image/hairzoneimage.jpeg",
+  },
+  {
+    brand: "nailed by ella",
+    headline: "Discount: 10% off",
+    detail: "on any Gel X designs",
+    image: "/image/nailsbyellaimage.jpeg",
+  },
+  {
+    brand: "Q Billiards",
+    headline: "Discount: 10% off",
+    detail: "table hire, food and beverage items from 'Qafe'",
+    image: "/image/qbilliardimage.jpg",
   },
 ];
 
 const sponsors = [
-  "/image/little_IndoTown.png",
-  "/image/dapurSate.png",
-  "/image/kenanganCoffee.png",
-  "/image/bintangBro.png",
-  "/image/sweetRepublic.png",
-  "/image/dedyCafe.png",
-  "/image/viciousCycle.jfif",
-  "/image/ayamGoreng99.png",
-  "/image/squidPocha.png",
-  "/image/wooTea.png",
-  "/image/escapeHunt.jpg",
-  "/image/quizRoom.jpg",
-  "/image/virtualRoom.png",
-  "/image/geprekInAustralia.jfif",
-  "/image/innitCafe.png",
+  { src: "/image/little_IndoTown.png", name: "Little IndoTown" },
+  { src: "/image/dapurSate.png", name: "Dapur Sate" },
+  { src: "/image/kenanganCoffee.png", name: "Kenangan Coffee" },
+  { src: "/image/bintangbro.png", name: "Bintang Bro" },
+  { src: "/image/sweetRepublic.png", name: "Sweet Republic" },
+  { src: "/image/dedyCafe.png", name: "Dedy Cafe" },
+  { src: "/image/viciousCycle.jfif", name: "Vicious Cycle" },
+  { src: "/image/ayamGoreng99.png", name: "Ayam Goreng 99" },
+  { src: "/image/squidPocha.png", name: "Squid Pocha" },
+  { src: "/image/wooTea.png", name: "Woo Tea" },
+  { src: "/image/escapeHunt.jpg", name: "Escape Hunt" },
+  { src: "/image/quizRoom.jpg", name: "Quiz Room" },
+  { src: "/image/virtualRoom.png", name: "Virtual Room" },
+  { src: "/image/geprekInAustralia.jfif", name: "Geprek In Australia" },
+  { src: "/image/innitCafe.png", name: "Innit Cafe" },
 ];
 
 export default function Home() {
@@ -135,10 +233,10 @@ export default function Home() {
               <span className="font-semibold italic">a globalized world.</span>
             </p>
             <Link
-              href="/committees"
+              href="/about"
               className="mt-8 inline-flex items-center justify-center rounded-full bg-red-600 px-6 py-3 text-lg font-semibold text-white shadow-md transition hover:translate-y-[-1px] hover:bg-red-700 focus:outline-none focus:ring-4 focus:ring-red-300"
             >
-              Meet the Team
+              Want To Find More About Us?
             </Link>
           </div>
         </div>
@@ -152,10 +250,16 @@ export default function Home() {
           { src: "/image/homePic3.jpg" },
           { src: "/image/homePic4.jpg" },
           { src: "/image/homePic5.jpg" },
+          { src: "/image/homePic6.jpg" },
+          { src: "/image/homePic7.jpg" },
+          { src: "/image/homePic8.jpg" },
+          { src: "/image/homePic9.jpg" },
+          { src: "/image/homePic10.jpg" },
+          { src: "/image/homePic11.jpg" },
         ]}
         height={200}
         width={280}
-        speedSec={26}
+        speedSec={40}
       />
 
       {/* Events */}
@@ -208,9 +312,12 @@ export default function Home() {
           <DealsCarousel deals={deals} autoMs={3500} />
         </div>
         <div className="mt-10 flex justify-center">
-          <button className="rounded-full bg-red-600 px-6 py-3 text-white shadow transition hover:-translate-y-0.5">
+          <a
+            href="/sponsors"
+            className="rounded-full bg-red-600 px-6 py-3 text-white shadow transition hover:-translate-y-0.5"
+          >
             View More Student Deals
-          </button>
+          </a>
         </div>
       </section>
 
@@ -224,18 +331,32 @@ export default function Home() {
         </p>
         <div className="mt-6">
           <AutoScroller speedSec={80} className="py-6" gapClass="gap-10">
-            {sponsors.map((src, i) => (
+            {sponsors.map((sponsor, i) => (
               <div
                 key={i}
-                className="flex h-28 w-28 items-center justify-center rounded-xl bg-white shadow ring-1 ring-black/5"
+                className="relative group/card flex h-28 w-28 items-center justify-center rounded-xl bg-white shadow ring-1 ring-black/5"
               >
                 <Image
-                  src={src}
-                  alt="Sponsor logo"
+                  src={sponsor.src}
+                  alt={sponsor.name}
                   width={96}
                   height={96}
                   className="h-16 w-auto object-contain"
                 />
+
+                {/* tooltip only for THIS card */}
+                <span
+                  className="
+                    pointer-events-none absolute bottom-full left-1/2 z-10 -translate-x-1/2 translate-y-1
+                    rounded-md bg-black px-2 py-1 text-xs text-white opacity-0
+                    shadow-sm ring-1 ring-black/20
+                    transition duration-150 ease-out
+                    group-hover/card:opacity-100 group-hover/card:translate-y-0
+                    whitespace-nowrap
+                  "
+                >
+                  {sponsor.name}
+                </span>
               </div>
             ))}
           </AutoScroller>

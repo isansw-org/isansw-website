@@ -2,41 +2,63 @@
 
 import Navbar from "../../../components/common/navbar";
 import Footer from "../../../components/common/footer";
-import EventsHero from "./_components/eventshero"; // <- match your file casing
-import EventRow from "./_components/container"; // <- if you kept 'container.tsx', adjust this import
+import EventsHero from "./_components/eventshero";
+import EventRow from "./_components/container";
 import { useMemo, useState } from "react";
 import { Search, Filter } from "lucide-react";
+import Image from "next/image";
+import type { StaticImageData } from "next/image";
 
-// static import (avoids typos and supports blur placeholder)
+// Static import (helps with blur and avoids path typos)
 import domienator from "@/public/image/domienator.png";
 
 type EventItem = {
   month: string;
-  day: number;
+  day: number | string;
   title: string;
   subtitle?: string;
   description: string;
   image?: string | StaticImageData;
   imageAlt?: string;
-  href: string;
+  href: string; // can be internal (/events/slug) or external (https://instagram...)
 };
 
 const EVENTS: EventItem[] = [
   {
-    month: "MAR",
+    month: "May",
     day: 3,
     title: "Domienator",
-    subtitle: "Isa’s Indomie Competition",
+    subtitle: "ISA’s Indomie Competition",
     description:
-      "It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout.",
-    image: domienator, // or "/image/domienator.png"
+      "Compete, cheer, and slurp your way to glory with friends from across NSW!",
+    image: domienator,
     imageAlt: "Participants at Domienator event",
-    href: "/events/domienator",
+    href: "https://www.instagram.com/p/DIsUyuATcjb/",
   },
-  // add more items here
+  {
+    month: "May",
+    day: 10,
+    title: "Jejak Senja",
+    subtitle: "Scenic Afternoon Hike",
+    description: "Looking for an escape from deadlines, noise, and city rush?",
+    image: "/image/jejaksenja.png",
+    imageAlt: "Jejak Senja",
+    href: "https://www.instagram.com/p/DI8nhVpBucO/",
+  },
+  {
+    month: "Aug",
+    day: 28,
+    title: "NSW Cup",
+    subtitle: "ISA's Sports Competition",
+    description:
+      "The NSW Cup is back, ISA’s biggest annual sports showdown featuring billiards, Valorant, basketball, badminton & mini soccer. ",
+    image: "/image/nswCup.png",
+    imageAlt: "NSW Cup",
+    href: "https://www.instagram.com/p/DLrb11oBiZ9/",
+  },
 ];
 
-export default function Home() {
+export default function EventsPage() {
   const [searchTerm, setSearchTerm] = useState("");
 
   const filtered = useMemo(() => {
@@ -58,39 +80,60 @@ export default function Home() {
 
         {/* Search + Filter Bar */}
         <div className="mx-auto max-w-6xl px-5">
-          <div className="flex justify-end gap-4 mt-4 mb-8">
+          <div className="mt-4 mb-8 flex justify-end gap-4">
             {/* Search Input */}
-            <div className="flex items-center border-2 border-red-500 rounded-full px-4 py-2 w-full max-w-md text-lg">
+            <div className="flex w-full max-w-md items-center rounded-full border-2 border-red-500 px-4 py-2 text-lg">
               <input
                 type="text"
-                placeholder="Search Events..."
+                placeholder="Search events..."
                 value={searchTerm}
                 onChange={(e) => setSearchTerm(e.target.value)}
-                className="flex-grow bg-transparent focus:outline-none placeholder-red-300 text-black"
+                className="flex-grow bg-transparent text-black placeholder-red-300 focus:outline-none"
+                aria-label="Search events"
               />
-              <button className="ml-2 bg-red-500 text-white rounded-full p-2 hover:bg-red-600 transition">
-                <Search className="w-5 h-5" />
+              {/* Decorative button (filter happens on typing already) */}
+              <button
+                type="button"
+                className="ml-2 rounded-full bg-red-500 p-2 text-white transition hover:bg-red-600"
+                aria-label="Search"
+              >
+                <Search className="h-5 w-5" />
               </button>
             </div>
 
-            {/* Filter Button */}
-            <button className="shrink-0 flex items-center gap-2 bg-red-500 text-white font-bold rounded-full px-5 py-2 hover:bg-red-600 transition">
-              Filter <Filter className="w-5 h-5" />
+            {/* Filter Button (hook up when ready) */}
+            <button
+              type="button"
+              className="flex shrink-0 items-center gap-2 rounded-full bg-red-500 px-5 py-2 font-bold text-white transition hover:bg-red-600"
+            >
+              Filter <Filter className="h-5 w-5" />
             </button>
           </div>
         </div>
 
         {/* Heading */}
-        <div className="max-w-6xl mx-auto px-4 py-10">
+        <div className="mx-auto max-w-6xl px-4 py-10">
           <h2 className="text-3xl font-bold text-black">Upcoming Events</h2>
           <div className="h-[3px] w-full bg-red-500/90" />
         </div>
 
-        {/* Rows (container draws dividers) */}
-        <div className="mx-auto max-w-6xl px-4 divide-y-[2px] divide-red-500/90">
-          {filtered.map((ev) => (
-            <EventRow key={ev.href} {...ev} showDivider={false} />
-          ))}
+        {/* Rows (parent draws the dividers) */}
+        <div className="mx-auto max-w-6xl px-4">
+          {filtered.length === 0 ? (
+            <div className="rounded-xl border-2 border-dashed border-red-300 bg-white/60 p-8 text-center text-stone-700">
+              No events matched “{searchTerm}”. Try a different keyword.
+            </div>
+          ) : (
+            <div className="divide-y-[2px] divide-red-500/90">
+              {filtered.map((ev) => (
+                <EventRow
+                  key={`${ev.month}-${ev.day}-${ev.title}`}
+                  {...ev}
+                  showDivider={false}
+                />
+              ))}
+            </div>
+          )}
         </div>
       </main>
 

@@ -23,18 +23,18 @@ const events: EventItem[] = [
   },
   {
     id: "2",
-    title: "DOMIENATOR",
-    subtitle: "~ISA’s Indomie Competition~",
-    date: "03/05/2025",
-    image: "/image/domienator.png",
+    title: "Jejak Senja",
+    subtitle: "~Exploring Sydney's Scenes~",
+    date: "10/05/2025",
+    image: "/image/jejaksenja.png",
     href: "/events",
   },
   {
     id: "3",
-    title: "DOMIENATOR",
-    subtitle: "~ISA’s Indomie Competition~",
-    date: "03/05/2025",
-    image: "/image/domienator.png",
+    title: "NSW Cup",
+    subtitle: "~ISA’s Sports Competition~",
+    date: "28/08/2025",
+    image: "/image/nswCup.png",
     href: "/events",
   },
 ];
@@ -324,10 +324,11 @@ export default function Home() {
       {/* Sponsors */}
       <section className="mx-auto max-w-6xl px-4 py-12">
         <h3 className="text-2xl font-extrabold text-red-600">
-          Powered by Our Sponsors
+          Special Thanks to Our Sponsors
         </h3>
         <p className="mt-2 text-stone-700">
-          Sharing the spirit of Indonesia in the heart of Sydney.
+          Who are able to help share the spirit of Indonesia in the heart of
+          Sydney.
         </p>
         <div className="mt-6">
           <AutoScroller speedSec={80} className="py-6" gapClass="gap-10">

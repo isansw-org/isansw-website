@@ -59,7 +59,6 @@ export default function Navbar() {
             Sponsors
           </Link>
 
-          {/* CTV wording */}
           <button
             onClick={() => setShowContact(true)}
             className="bg-amber-50 text-red-600 font-bold px-4 py-1.5 rounded-full border-2 border-white hover:bg-gray-200 transition"
@@ -117,17 +116,11 @@ export default function Navbar() {
                   <span className="text-lg font-semibold text-gray-700">
                     Email:
                   </span>{" "}
-                  info@isansw.org
+                  medkomppiansw@gmail.com
                 </p>
                 <p>
                   <span className="text-lg font-semibold text-gray-700">
-                    Phone:
-                  </span>{" "}
-                  +61 400 123 456
-                </p>
-                <p>
-                  <span className="text-lg font-semibold text-gray-700">
-                    Address:
+                    Based On:
                   </span>{" "}
                   Sydney, NSW, Australia
                 </p>

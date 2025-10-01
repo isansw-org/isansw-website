@@ -1,3 +1,5 @@
+"use client";
+
 import Navbar from "../components/common/navbar";
 import Footer from "../components/common/footer";
 import Image from "next/image";
@@ -88,16 +90,15 @@ export default function Home() {
       <Navbar />
 
       {/* Hero / Landing Block */}
-      <div className="flex justify-center h-screen items-center">
-        <div className="text-lg text-center grid space-y-4">
-          <h1 className="font-semibold text-4xl pb-4">ISANSW</h1>
-          <p>
-            Get started by making changes to the <code>app</code> directory.
-          </p>
-          <p>
-            Go to <code>/admin</code> to access the admin dashboard.
-          </p>
-        </div>
+      <div className="relative flex h-screen items-center justify-center bg-amber-50 overflow-hidden">
+        <video
+          src="/image/homepage.webm"
+          autoPlay
+          muted
+          playsInline
+          poster="/image/homepage_poster.jpg"
+          className="h-full w-auto max-w-7xl"
+        />
       </div>
 
       {/* WHO ARE WE Section */}
@@ -108,7 +109,7 @@ export default function Home() {
             <div className="rounded-3xl border-2 border-red-300 bg-red-50/30 p-2 shadow-sm">
               <div className="overflow-hidden rounded-2xl ring-4 ring-red-200/60">
                 <Image
-                  src="/image/ISAPIC.jpg" // update with your real path
+                  src="/image/ISAPIC.jpg"
                   alt="ISANSW community group photo"
                   width={900}
                   height={700}
@@ -142,6 +143,8 @@ export default function Home() {
           </div>
         </div>
       </section>
+
+      {/* Carousel */}
       <AutoCarousel
         images={[
           { src: "/image/homePic1.jpg" },
@@ -152,21 +155,20 @@ export default function Home() {
         ]}
         height={200}
         width={280}
-        speedSec={26} // slower/faster
+        speedSec={26}
       />
 
+      {/* Events */}
       <section className="mx-auto max-w-6xl px-4 py-14">
         <h2 className="mb-8 text-center text-3xl font-extrabold text-red-600">
           🎉 Upcoming ISA Events 🎉
         </h2>
-
         <EventsPager events={events} perPage={3} />
       </section>
 
-      {/* 3D CTA Section*/}
+      {/* 3D CTA */}
       <section className="mx-auto max-w-4xl px-4 py-12">
         <div className="rounded-3xl bg-gradient-to-b from-red-600 to-orange-400 p-1 shadow-xl ring-1 ring-black/10">
-          {/* Header */}
           <div className="rounded-t-3xl px-6 py-5 text-white">
             <h3 className="mt-2 text-2xl font-extrabold text-center">
               ISA Branch Across NSW
@@ -176,11 +178,8 @@ export default function Home() {
               student community.
             </p>
           </div>
-
-          {/* Image preview -> links to branches */}
           <Link href="/branches" className="block p-6 group">
             <div className="relative mx-auto w-full max-w-4xl overflow-hidden rounded-2xl ring-4 ring-orange-300/50">
-              {/* Preview image */}
               <Image
                 src="/image/NSW_branches.png"
                 alt="Interactive NSW Map (coming soon)"
@@ -189,8 +188,6 @@ export default function Home() {
                 className="w-full h-auto object-contain transition-transform duration-300 group-hover:scale-105"
                 priority={false}
               />
-
-              {/* Overlay (hidden until hover) */}
               <div className="absolute inset-0 flex items-center justify-center bg-black/50 opacity-0 transition-opacity duration-300 group-hover:opacity-100">
                 <span className="rounded-md bg-white/90 px-6 py-2 text-sm font-semibold text-gray-800 shadow">
                   Click to view ISA NSW Map →
@@ -201,18 +198,15 @@ export default function Home() {
         </div>
       </section>
 
-      {/* ---- Hot Deals ---- */}
+      {/* Deals */}
       <section className="mx-auto max-w-6xl px-4 py-16">
         <div className="inline-flex items-center gap-2 rounded-full border-4 border-red-300 bg-red-600 px-4 py-2 text-white shadow-md">
           <span>🔥</span>
           <p className="text-lg font-extrabold">Hot Deals for Students</p>
         </div>
-
         <div className="mt-8">
-          {/* new carousel */}
           <DealsCarousel deals={deals} autoMs={3500} />
         </div>
-
         <div className="mt-10 flex justify-center">
           <button className="rounded-full bg-red-600 px-6 py-3 text-white shadow transition hover:-translate-y-0.5">
             View More Student Deals
@@ -220,7 +214,7 @@ export default function Home() {
         </div>
       </section>
 
-      {/* ---- Sponsors ---- */}
+      {/* Sponsors */}
       <section className="mx-auto max-w-6xl px-4 py-12">
         <h3 className="text-2xl font-extrabold text-red-600">
           Powered by Our Sponsors
@@ -228,7 +222,6 @@ export default function Home() {
         <p className="mt-2 text-stone-700">
           Sharing the spirit of Indonesia in the heart of Sydney.
         </p>
-
         <div className="mt-6">
           <AutoScroller speedSec={80} className="py-6" gapClass="gap-10">
             {sponsors.map((src, i) => (
@@ -248,6 +241,7 @@ export default function Home() {
           </AutoScroller>
         </div>
       </section>
+
       <MembershipAndNewsletter />
       <Footer />
     </section>

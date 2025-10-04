@@ -1,6 +1,6 @@
 {
-  "id": "f621d9e7-a1ec-4399-8d7c-f50e065b03dd",
-  "prevId": "3630058f-4799-42c9-836e-f0c5c461fad7",
+  "id": "02dc90f1-3f39-492b-8b17-4977daf172bf",
+  "prevId": "f621d9e7-a1ec-4399-8d7c-f50e065b03dd",
   "version": "7",
   "dialect": "postgresql",
   "tables": {
@@ -107,8 +107,8 @@
           "primaryKey": false,
           "notNull": false
         },
-        "Details": {
-          "name": "Details",
+        "Slug": {
+          "name": "Slug",
           "type": "varchar(255)",
           "primaryKey": false,
           "notNull": true
@@ -129,11 +129,11 @@
         }
       },
       "indexes": {
-        "Event_Details_Idx": {
-          "name": "Event_Details_Idx",
+        "Event_Slug_Idx": {
+          "name": "Event_Slug_Idx",
           "columns": [
             {
-              "expression": "Details",
+              "expression": "Slug",
               "isExpression": false,
               "asc": true,
               "nulls": "last"
@@ -148,11 +148,11 @@
       "foreignKeys": {},
       "compositePrimaryKeys": {},
       "uniqueConstraints": {
-        "Event_Details_unique": {
-          "name": "Event_Details_unique",
+        "Event_Slug_unique": {
+          "name": "Event_Slug_unique",
           "nullsNotDistinct": false,
           "columns": [
-            "Details"
+            "Slug"
           ]
         }
       },

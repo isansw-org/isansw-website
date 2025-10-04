@@ -15,6 +15,13 @@
       "when": 1745081178472,
       "tag": "0001_furry_scrambler",
       "breakpoints": true
+    },
+    {
+      "idx": 2,
+      "version": "7",
+      "when": 1759608188032,
+      "tag": "0002_watery_carlie_cooper",
+      "breakpoints": true
     }
   ]
 }

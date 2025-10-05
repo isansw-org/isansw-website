@@ -62,7 +62,7 @@ export default function Navbar() {
   return (
     <>
       {/* Top navbar */}
-      <nav className="sticky top-0 z-40 bg-red-600 backdrop-blur supports-[backdrop-filter]:bg-red-500/80">
+      <nav className="sticky top-0 z-40 bg-red-500">
         <div className="mx-auto flex max-w-6xl items-center justify-between px-4 py-3 md:px-6">
           {/* Logo */}
           <Link href="/" className="flex items-center gap-2">

@@ -70,7 +70,7 @@ const deals: Deal[] = [
     brand: "Vicious Cycle",
     headline: "Discount: 20% off",
     detail: "for 5, 10, or 20 class credit packages",
-    image: "/image/viciousCycle.jpg",
+    image: "/image/viciouscycleimage.jpg",
   },
   {
     brand: "Ayam Goreng 99",
@@ -168,7 +168,7 @@ const sponsors = [
   { src: "/image/little_IndoTown.png", name: "Little IndoTown" },
   { src: "/image/dapurSate.png", name: "Dapur Sate" },
   { src: "/image/kenanganCoffee.png", name: "Kenangan Coffee" },
-  { src: "/image/bintangbro.png", name: "Bintang Bro" },
+  { src: "/image/bintangBro.png", name: "Bintang Bro" },
   { src: "/image/sweetRepublic.png", name: "Sweet Republic" },
   { src: "/image/dedyCafe.png", name: "Dedy Cafe" },
   { src: "/image/viciousCycle.jfif", name: "Vicious Cycle" },
@@ -207,7 +207,7 @@ export default function Home() {
             <div className="rounded-3xl border-2 border-red-300 bg-red-50/30 p-2 shadow-sm">
               <div className="overflow-hidden rounded-2xl ring-4 ring-red-200/60">
                 <Image
-                  src="/image/ISA_PIC.jpg"
+                  src="/image/ISAPIC.JPG"
                   alt="ISANSW community group photo"
                   width={900}
                   height={700}

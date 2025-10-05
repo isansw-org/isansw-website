@@ -47,7 +47,7 @@ export default function Committees() {
           <Card
             title="President"
             name="David Jefferson Santoso"
-            image="/image/committee/david.jpg"
+            image="./image/committee/david.jpg"
           />
         </div>
 
@@ -56,7 +56,7 @@ export default function Committees() {
           <Card
             title="VP Internal"
             name="Elisha Honoris"
-            image="/image/committee/elisha.jpg"
+            image="./image/committee/elisha.jpg"
           />
           <Card
             title="VP Operation"

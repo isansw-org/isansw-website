@@ -47,7 +47,7 @@ export default function Committees() {
           <Card
             title="President"
             name="David Jefferson Santoso"
-            image="/image/committee/david.jpg"
+            image="./image/committee/david.jpg"
           />
         </div>
 
@@ -56,17 +56,17 @@ export default function Committees() {
           <Card
             title="VP Internal"
             name="Elisha Honoris"
-            image="/image/committee/elisha.jpg"
+            image="./image/committee/elisha.jpg"
           />
           <Card
             title="VP Operation"
             name="Dave Sebastian Setiawan"
-            image="/image/committee/daves.jpg"
+            image="./image/committee/daves.jpg"
           />
           <Card
             title="VP External"
             name="Pius Gabriel"
-            image="/image/committee/pius.jpg"
+            image="./image/committee/pius.jpg"
           />
         </div>
 
@@ -75,12 +75,12 @@ export default function Committees() {
           <Card
             title="Secretary"
             name="Karina Gabriela Sutrisna"
-            image="/image/committee/karina.jpg"
+            image="./image/committee/karina.jpg"
           />
           <Card
             title="Treasurer"
             name="Davin Najanurdin"
-            image="/image/committee/davin.jpg"
+            image="./image/committee/davin.jpg"
           />
         </div>
 
@@ -91,17 +91,17 @@ export default function Committees() {
             <Card
               title="Director"
               name="Abyan Majid"
-              image="/image/committee/abyan.jpg"
+              image="./image/committee/abyan.jpg"
             />
             <Card
               title="Committee"
               name="Jennifer Soetedjo"
-              image="/image/committee/jennifer.jpg"
+              image="./image/committee/jennifer.jpg"
             />
             <Card
               title="Committee"
               name="Fiona Lee"
-              image="/image/committee/fiona.jpg"
+              image="./image/committee/fiona.jpg"
             />
             <Card
               title="Committee"

@@ -6,17 +6,13 @@ import Link from "next/link";
 import Navbar from "@/components/common/navbar";
 import Footer from "@/components/common/footer";
 
-/* ----------------------------- Types & Utils ----------------------------- */
-
 type Sponsor = {
   src: string | StaticImageData;
   name: string;
-  href?: string; // optional website/IG; opens in new tab if external
+  href?: string;
 };
 
 const isExternal = (href?: string) => !!href && /^https?:\/\//i.test(href);
-
-/* ------------------------------ Sample Data ------------------------------ */
 
 const SPONSORS: Sponsor[] = [
   { src: "/image/little_IndoTown.png", name: "Little IndoTown" },
@@ -35,8 +31,6 @@ const SPONSORS: Sponsor[] = [
   { src: "/image/geprekInAustralia.jfif", name: "Geprek In Australia" },
   { src: "/image/innitCafe.png", name: "Innit Cafe" },
 ];
-
-/* --------------------------- Reusable Components ------------------------- */
 
 function SponsorCard({
   src,
@@ -102,8 +96,6 @@ function SponsorsGrid({
   );
 }
 
-/* --------------------------- Logo Marquee (CSS) -------------------------- */
-
 function LogoMarquee({ sponsors }: { sponsors: Sponsor[] }) {
   const strip = [...sponsors, ...sponsors]; // duplicate for seamless loop
   return (
@@ -140,8 +132,6 @@ function LogoMarquee({ sponsors }: { sponsors: Sponsor[] }) {
     </div>
   );
 }
-
-/* ------------------------------ 3D Viewer ------------------------------- */
 
 import { useEffect, useRef } from "react";
 import * as THREE from "three";
@@ -331,8 +321,6 @@ function ModelViewer({
 
   return <div ref={mountRef} className="aspect-video w-full min-h-[320px]" />;
 }
-
-/* --------------------------------- Page ---------------------------------- */
 
 export default function SponsorsPage() {
   return (

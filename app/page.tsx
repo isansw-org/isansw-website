@@ -10,7 +10,7 @@ import AutoScroller from "./AutoScroller";
 import { Deal } from "./DealCard";
 import MembershipAndNewsletter from "./MembershipAndNewsletter";
 import EventsPager from "./EventsPager";
-import DealsCarousel from "./DealsCarousel";
+import DealsCarousel from "./DealsCarousel"; //test
 
 const events: EventItem[] = [
   {

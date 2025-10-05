@@ -70,7 +70,7 @@ const deals: Deal[] = [
     brand: "Vicious Cycle",
     headline: "Discount: 20% off",
     detail: "for 5, 10, or 20 class credit packages",
-    image: "/image/viciouscycleimage.jpg",
+    image: "/image/viciousCycle.jpg",
   },
   {
     brand: "Ayam Goreng 99",
@@ -118,7 +118,7 @@ const deals: Deal[] = [
     brand: "Geprek in Sydney",
     headline: "FREE",
     detail: "Teh kotak with (min purchase of 1 Geprek Bowl)",
-    image: "/image/geprekinsydneyfood.jpeg",
+    image: "/image/geprekInAustralia.jpg",
   },
   {
     brand: "Innit Cafe & Bar",
@@ -178,7 +178,7 @@ const sponsors = [
   { src: "/image/escapeHunt.jpg", name: "Escape Hunt" },
   { src: "/image/quizRoom.jpg", name: "Quiz Room" },
   { src: "/image/virtualRoom.png", name: "Virtual Room" },
-  { src: "/image/geprekInAustralia.jfif", name: "Geprek In Australia" },
+  { src: "/image/geprekInAustralia.jpg", name: "Geprek In Australia" },
   { src: "/image/innitCafe.png", name: "Innit Cafe" },
 ];
 
@@ -207,7 +207,7 @@ export default function Home() {
             <div className="rounded-3xl border-2 border-red-300 bg-red-50/30 p-2 shadow-sm">
               <div className="overflow-hidden rounded-2xl ring-4 ring-red-200/60">
                 <Image
-                  src="/image/ISAPIC.jpg"
+                  src="/image/ISA_PIC.jpg"
                   alt="ISANSW community group photo"
                   width={900}
                   height={700}
@@ -246,15 +246,15 @@ export default function Home() {
       <AutoCarousel
         images={[
           { src: "/image/homePic1.jpg" },
-          { src: "/image/homePic2.jpg" },
-          { src: "/image/homePic3.jpg" },
-          { src: "/image/homePic4.jpg" },
-          { src: "/image/homePic5.jpg" },
-          { src: "/image/homePic6.jpg" },
-          { src: "/image/homePic7.jpg" },
-          { src: "/image/homePic8.jpg" },
-          { src: "/image/homePic9.jpg" },
-          { src: "/image/homePic10.jpg" },
+          { src: "/image/homePic2.JPG" },
+          { src: "/image/homePic3.JPG" },
+          { src: "/image/homePic4.JPG" },
+          { src: "/image/homePic5.JPG" },
+          { src: "/image/homePic6.JPG" },
+          { src: "/image/homePic7.JPG" },
+          { src: "/image/homePic8.JPG" },
+          { src: "/image/homePic9.JPG" },
+          { src: "/image/homePic10.JPG" },
           { src: "/image/homePic11.jpg" },
         ]}
         height={200}

@@ -21,14 +21,14 @@ const SPONSORS: Sponsor[] = [
   { src: "/image/bintangbro.png", name: "Bintang Bro" },
   { src: "/image/sweetRepublic.png", name: "Sweet Republic" },
   { src: "/image/dedyCafe.png", name: "Dedy Cafe" },
-  { src: "/image/viciousCycle.jfif", name: "Vicious Cycle" },
+  { src: "/image/viciousCycle.jpg", name: "Vicious Cycle" },
   { src: "/image/ayamGoreng99.png", name: "Ayam Goreng 99" },
   { src: "/image/squidPocha.png", name: "Squid Pocha" },
   { src: "/image/wooTea.png", name: "Woo Tea" },
   { src: "/image/escapeHunt.jpg", name: "Escape Hunt" },
   { src: "/image/quizRoom.jpg", name: "Quiz Room" },
   { src: "/image/virtualRoom.png", name: "Virtual Room" },
-  { src: "/image/geprekInAustralia.jfif", name: "Geprek In Australia" },
+  { src: "/image/geprekInAustralia.jpg", name: "Geprek In Australia" },
   { src: "/image/innitCafe.png", name: "Innit Cafe" },
 ];
 

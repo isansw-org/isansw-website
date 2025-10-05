@@ -47,7 +47,7 @@ export default function Committees() {
           <Card
             title="President"
             name="David Jefferson Santoso"
-            image="./image/committee/david.jpg"
+            image="./image/committee/david.JPG"
           />
         </div>
 
@@ -56,17 +56,17 @@ export default function Committees() {
           <Card
             title="VP Internal"
             name="Elisha Honoris"
-            image="./image/committee/elisha.jpg"
+            image="./image/committee/elisha.JPG"
           />
           <Card
             title="VP Operation"
             name="Dave Sebastian Setiawan"
-            image="/image/committee/daves.jpg"
+            image="/image/committee/daves.JPG"
           />
           <Card
             title="VP External"
             name="Pius Gabriel"
-            image="/image/committee/pius.jpg"
+            image="/image/committee/pius.JPG"
           />
         </div>
 
@@ -75,12 +75,12 @@ export default function Committees() {
           <Card
             title="Secretary"
             name="Karina Gabriela Sutrisna"
-            image="/image/committee/karina.jpg"
+            image="/image/committee/karina.JPG"
           />
           <Card
             title="Treasurer"
             name="Davin Najanurdin"
-            image="/image/committee/davin.jpg"
+            image="/image/committee/davin.JPG"
           />
         </div>
 
@@ -91,22 +91,22 @@ export default function Committees() {
             <Card
               title="Director"
               name="Abyan Majid"
-              image="/image/committee/abyan.jpg"
+              image="/image/committee/abyan.JPG"
             />
             <Card
               title="Committee"
               name="Jennifer Soetedjo"
-              image="/image/committee/jennifer.jpg"
+              image="/image/committee/jennifer.JPG"
             />
             <Card
               title="Committee"
               name="Fiona Lee"
-              image="/image/committee/fiona.jpg"
+              image="/image/committee/fiona.JPG"
             />
             <Card
               title="Committee"
               name="Jason Chandra"
-              image="/image/committee/jason.jpg"
+              image="/image/committee/jason.JPG"
             />
           </div>
         </div>
@@ -118,37 +118,37 @@ export default function Committees() {
             <Card
               title="Director"
               name="Fairy Dior Richtan"
-              image="/image/committee/fairy.jpg"
+              image="/image/committee/fairy.JPG"
             />
             <Card
               title="Committee"
               name="Aurelio Jonathan"
-              image="/image/committee/aurelio.jpg"
+              image="/image/committee/aurelio.JPG"
             />
             <Card
               title="Committee"
               name="Chrisella Anastasia"
-              image="/image/committee/chrisella.jpg"
+              image="/image/committee/chrisella.JPG"
             />
             <Card
               title="Committee"
               name="Bennedicta Mishka Natakusumah"
-              image="/image/committee/mishka.jpg"
+              image="/image/committee/mishka.JPG"
             />
             <Card
               title="Committee"
               name="Muhammad Alfaren Raisya Lesma"
-              image="/image/committee/alfaren.jpg"
+              image="/image/committee/alfaren.JPG"
             />
             <Card
               title="Committee"
               name="Alghiyas Shafaqa"
-              image="/image/committee/alghiyas.jpg"
+              image="/image/committee/alghiyas.JPG"
             />
             <Card
               title="Committee"
               name="Jayson Earvin Weliyanto"
-              image="/image/committee/jayson.jpg"
+              image="/image/committee/jayson.JPG"
             />
           </div>
         </div>
@@ -160,27 +160,27 @@ export default function Committees() {
             <Card
               title="Director"
               name="Rafael Bisawan"
-              image="/image/committee/rafael.jpg"
+              image="/image/committee/rafael.JPG"
             />
             <Card
               title="Co-Director"
               name="Darren Verrel Kumala"
-              image="/image/committee/darren.jpg"
+              image="/image/committee/darren.JPG"
             />
             <Card
               title="Committee"
               name="Jonathan Chandra"
-              image="/image/committee/jonathan.jpg"
+              image="/image/committee/jonathan.JPG"
             />
             <Card
               title="Committee"
               name="Caesar Ehrlich Sampurna Achmad"
-              image="/image/committee/elrich.jpg"
+              image="/image/committee/elrich.JPG"
             />
             <Card
               title="Committee"
               name="Greta Clarabel Valeria"
-              image="/image/committee/greta.jpg"
+              image="/image/committee/greta.JPG"
             />
           </div>
         </div>
@@ -192,22 +192,22 @@ export default function Committees() {
             <Card
               title="Director"
               name="Giorgia Soen"
-              image="/image/committee/georgia.jpg"
+              image="/image/committee/georgia.JPG"
             />
             <Card
               title="Committee"
               name="Sophie Kennieta Iskandarsjah"
-              image="/image/committee/sophie.jpg"
+              image="/image/committee/sophie.JPG"
             />
             <Card
               title="Committee"
               name="Jessica Dwinasya Permata Huseno"
-              image="/image/committee/jessica.jpg"
+              image="/image/committee/jessica.JPG"
             />
             <Card
               title="Committee"
               name="Muhammad Hilal Ariq"
-              image="/image/committee/hilal.jpg"
+              image="/image/committee/hilal.JPG"
             />
           </div>
         </div>
@@ -219,22 +219,22 @@ export default function Committees() {
             <Card
               title="Director"
               name="Nur Fadiyah Makareem"
-              image="/image/committee/fay.jpg"
+              image="/image/committee/fay.JPG"
             />
             <Card
               title="Committee"
               name="Janice Athalia Wibowo"
-              image="/image/committee/janice.jpg"
+              image="/image/committee/janice.JPG"
             />
             <Card
               title="Committee"
               name="Vania"
-              image="/image/committee/vania.jpg"
+              image="/image/committee/vania.JPG"
             />
             <Card
               title="Committee"
               name="Grace Florencia Joshelyn Simen"
-              image="/image/committee/grace.jpg"
+              image="/image/committee/grace.JPG"
             />
           </div>
         </div>
@@ -246,42 +246,42 @@ export default function Committees() {
             <Card
               title="Director"
               name="Tricia Winter"
-              image="/image/committee/winter.jpg"
+              image="/image/committee/winter.JPG"
             />
             <Card
               title="Committee"
               name="Hisyam Nailul Alim"
-              image="/image/committee/hisyam.jpg"
+              image="/image/committee/hisyam.JPG"
             />
             <Card
               title="Committee"
               name="Hubert Japarif"
-              image="/image/committee/hubert.jpg"
+              image="/image/committee/hubert.JPG"
             />
             <Card
               title="Committee"
               name="Celine Angelica"
-              image="/image/committee/celine.jpg"
+              image="/image/committee/celine.JPG"
             />
             <Card
               title="Committee"
               name="Ngui Zealand"
-              image="/image/committee/ngui.jpg"
+              image="/image/committee/ngui.JPG"
             />
             <Card
               title="Committee"
               name="Ansell Angouw"
-              image="/image/committee/ansel.jpg"
+              image="/image/committee/ansel.JPG"
             />
             <Card
               title="Committee"
               name="Keenan Marvelian Gunawan"
-              image="/image/committee/keanan.jpg"
+              image="/image/committee/keanan.JPG"
             />
             <Card
               title="Committee"
               name="Chanson Davechrysthoper"
-              image="/image/committee/chanson.jpg"
+              image="/image/committee/chanson.JPG"
             />
           </div>
         </div>
@@ -295,22 +295,22 @@ export default function Committees() {
             <Card
               title="Director"
               name="Keira Hanjaya"
-              image="/image/committee/keira.jpg"
+              image="/image/committee/keira.JPG"
             />
             <Card
               title="Committee"
               name="Evelyne Christina Welly"
-              image="/image/committee/evelyn.jpg"
+              image="/image/committee/evelyn.JPG"
             />
             <Card
               title="Committee"
               name="Surya Fathurrahman Acton"
-              image="/image/committee/acton.jpg"
+              image="/image/committee/acton.JPG"
             />
             <Card
               title="Committee"
               name="Aaron Kurniawan"
-              image="/image/committee/aaron.jpg"
+              image="/image/committee/aaron.JPG"
             />
           </div>
         </div>

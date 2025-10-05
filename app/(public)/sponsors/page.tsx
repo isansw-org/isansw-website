@@ -18,7 +18,7 @@ const SPONSORS: Sponsor[] = [
   { src: "/image/little_IndoTown.png", name: "Little IndoTown" },
   { src: "/image/dapurSate.png", name: "Dapur Sate" },
   { src: "/image/kenanganCoffee.png", name: "Kenangan Coffee" },
-  { src: "/image/bintangbro.png", name: "Bintang Bro" },
+  { src: "/image/bintangBro.png", name: "Bintang Bro" },
   { src: "/image/sweetRepublic.png", name: "Sweet Republic" },
   { src: "/image/dedyCafe.png", name: "Dedy Cafe" },
   { src: "/image/viciousCycle.jpg", name: "Vicious Cycle" },

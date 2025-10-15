@@ -197,7 +197,7 @@ export default function Home() {
             playsInline
             preload="metadata"
             poster="/image/homepage_poster.jpg"
-            className="absolute inset-0 h-full w-full object-contain"
+            className="absolute inset-0 h-full w-full object-contain object-top bg-amber-50"
           >
             <source src="/image/homepage.webm" type="video/webm" />
             <source src="/image/homepage.mp4" type="video/mp4" />

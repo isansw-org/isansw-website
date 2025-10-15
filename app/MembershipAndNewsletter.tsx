@@ -41,10 +41,10 @@ export default function MembershipAndNewsletter() {
                 </p>
 
                 <a
-                  href="/membership"
+                  href="mailto: medkomppiansw@gmail.com"
                   className="mt-8 inline-flex items-center rounded-full bg-red-600 px-7 py-3.5 text-sm font-semibold text-white shadow transition hover:-translate-y-0.5 focus:outline-none focus:ring-4 focus:ring-red-300"
                 >
-                  Join as a Member
+                  Email Us to Join as a Member
                 </a>
               </div>
             </div>
@@ -70,7 +70,7 @@ export default function MembershipAndNewsletter() {
             </p>
 
             <a
-              href="/newsletter"
+              href="mailto: medkomppiansw@gmail.com"
               className="mx-auto mt-8 inline-flex items-center rounded-full bg-white px-6 py-3 text-sm font-semibold text-red-600 shadow-md ring-1 ring-white/60 transition hover:-translate-y-0.5"
             >
               Join Our Newsletter

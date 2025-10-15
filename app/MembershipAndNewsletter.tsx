@@ -51,7 +51,7 @@ export default function MembershipAndNewsletter() {
           </div>
         </div>
 
-        {/* Cream → Red handoff (subtle blend that removes the hard edge) */}
+        {/* Cream → Red handoff*/}
         <div
           aria-hidden
           className="pointer-events-none h-30 w-full bg-gradient-to-b from-amber-50 to-red-500/80"

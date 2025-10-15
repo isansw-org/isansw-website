@@ -240,7 +240,7 @@ export default function Navbar() {
                 </p>
 
                 <a
-                  href="mailto:info@isansw.org"
+                  href="mailto: medkomppiansw@gmail.com"
                   className="absolute bottom-4 right-4 inline-flex items-center justify-center rounded-lg bg-red-600 px-4 py-2 font-semibold text-white transition hover:bg-red-700"
                 >
                   Send Email

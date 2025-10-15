@@ -345,7 +345,6 @@ export default function Home() {
                   className="h-16 w-auto object-contain"
                 />
 
-                {/* tooltip only for THIS card */}
                 <span
                   className="
                     pointer-events-none absolute bottom-full left-1/2 z-10 -translate-x-1/2 translate-y-1

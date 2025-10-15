@@ -94,7 +94,7 @@ export default function Committees() {
               image="/image/committee/abyan.JPG"
             />
             <Card
-              title="Committee"
+              title="Sub-Director"
               name="Jennifer Soetedjo"
               image="/image/committee/jennifer.JPG"
             />

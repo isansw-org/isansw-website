@@ -187,20 +187,26 @@ export default function Home() {
     <section className="bg-amber-50">
       <Navbar />
 
-      {/* Hero / Landing Block */}
-      <div className="relative flex h-screen items-center justify-center bg-amber-50 overflow-hidden">
-        <video
-          src="/image/homepage.webm"
-          autoPlay
-          muted
-          playsInline
-          poster="/image/homepage_poster.jpg"
-          className="h-full w-auto max-w-7xl"
-        />
-      </div>
+      {/* HERO responsive */}
+      <section className="bg-amber-50 pt-6 md:pt-8">
+        <div className="relative w-full h-[clamp(260px,55vh,520px)] mb-6 md:mb-10 lg:mb-12">
+          <video
+            autoPlay
+            muted
+            loop
+            playsInline
+            preload="metadata"
+            poster="/image/homepage_poster.jpg"
+            className="absolute inset-0 h-full w-full object-contain"
+          >
+            <source src="/image/homepage.webm" type="video/webm" />
+            <source src="/image/homepage.mp4" type="video/mp4" />
+          </video>
+        </div>
+      </section>
 
       {/* WHO ARE WE Section */}
-      <section className="bg-amber-50">
+      <section className="bg-amber-50 sm:pt-4 md:pt-6 pb-16">
         <div className="mx-auto grid max-w-6xl grid-cols-1 items-center gap-8 px-4 py-16 md:grid-cols-2 md:gap-12">
           {/* Image */}
           <div className="relative">

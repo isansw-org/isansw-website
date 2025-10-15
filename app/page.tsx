@@ -188,7 +188,7 @@ export default function Home() {
       <Navbar />
 
       {/* HERO responsive */}
-      <section className="bg-amber-50 pt-[4px] md:pt-[8px]">
+      <section className="bg-amber-50 pt-6 md:pt-8">
         <div className="relative w-full h-[clamp(260px,55vh,520px)] mb-6 md:mb-10 lg:mb-12">
           <video
             autoPlay
@@ -197,23 +197,11 @@ export default function Home() {
             playsInline
             preload="metadata"
             poster="/image/homepage_poster.jpg"
-            className="absolute inset-0 h-full w-full object-contain object-top bg-amber-50"
+            className="absolute inset-0 h-full w-full object-contain"
           >
-            <source src="/image/homepage.mp4" type="video/mp4" />
             <source src="/image/homepage.webm" type="video/webm" />
+            <source src="/image/homepage.mp4" type="video/mp4" />
           </video>
-
-          {/* 👇 Mobile-only overlay */}
-          <div className="absolute inset-0 flex items-center justify-center sm:hidden">
-            <div className="bg-black/50 px-4 py-2 rounded-xl text-center">
-              <h1 className="text-white text-lg font-bold leading-snug">
-                Welcome to ISANSW
-              </h1>
-              <p className="text-amber-100 text-sm mt-1">
-                Your Indonesian community in Sydney
-              </p>
-            </div>
-          </div>
         </div>
       </section>
 

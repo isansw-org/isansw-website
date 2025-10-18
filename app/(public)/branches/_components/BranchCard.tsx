@@ -13,14 +13,12 @@ export type Branch = {
   name: string;
   president?: string;
   contactEmail?: string;
-
   website?: string;
   instagram?: string;
   facebook?: string;
   linkedin?: string;
   youtube?: string;
   tiktok?: string;
-
   logo?: string; // e.g. "/image/branches/macquarie.png"
 };
 
@@ -48,27 +46,29 @@ export default function BranchCard({
   ];
 
   return (
-    <div className="rounded-[16px] border-2 border-red-300 bg-white p-4 md:p-5 shadow-[0_6px_18px_rgba(0,0,0,0.06)]">
-      <div className="grid grid-cols-[200px_1fr] md:grid-cols-[220px_1fr] gap-6">
-        {/* Logo box (bigger) */}
-        <div className="relative h-[180px] w-[180px] md:h-[200px] md:w-[200px] overflow-hidden rounded-[14px] bg-white ring-1 ring-red-200">
+    <div className="rounded-[16px] border-2 border-red-300 bg-white p-3 sm:p-4 md:p-6 shadow-[0_6px_18px_rgba(0,0,0,0.06)]">
+      {/* Stack on mobile; two columns on md+ */}
+      <div className="grid grid-cols-1 gap-4 sm:gap-5 md:grid-cols-[minmax(180px,220px)_1fr] md:gap-6">
+        {/* Logo box (centered on mobile) */}
+        <div className="relative mx-auto h-[110px] w-[110px] sm:h-[130px] sm:w-[130px] md:h-[200px] md:w-[200px] overflow-hidden rounded-[14px] bg-white ring-1 ring-red-200">
           <Image
             src={logo}
             alt={`${name} logo`}
             fill
             className="object-contain p-2"
-            sizes="(min-width: 768px) 140px, 120px"
+            sizes="(min-width: 768px) 200px, (min-width: 640px) 130px, 110px"
+            priority={false}
           />
         </div>
 
         {/* Content */}
         <div className="min-w-0">
-          <h3 className="text-[18px] md:text-[28px] font-semibold text-red-600 leading-6">
+          <h3 className="text-[16px] sm:text-[18px] md:text-[28px] font-semibold text-red-600 leading-tight">
             {name}
           </h3>
 
-          {/* President & Email text set to text-lg */}
-          <div className="mt-3 space-y-1 text-xl text-black/90">
+          {/* President & Email */}
+          <div className="mt-2 sm:mt-3 space-y-1 text-sm sm:text-base text-black/90 md:text-xl">
             {president && (
               <p>
                 <span className="font-semibold">President:</span> {president}
@@ -77,15 +77,18 @@ export default function BranchCard({
             {contactEmail && (
               <p>
                 <span className="font-semibold">Email:</span>{" "}
-                <a href={`mailto:${contactEmail}`} className="underline">
+                <a
+                  href={`mailto:${contactEmail}`}
+                  className="underline break-all"
+                >
                   {contactEmail}
                 </a>
               </p>
             )}
           </div>
 
-          {/* Socials row (bigger buttons & icons) */}
-          <div className="mt-5 flex flex-wrap items-center gap-2.5">
+          {/* Socials row */}
+          <div className="mt-3 flex flex-wrap items-center gap-2 sm:gap-2.5 md:mt-5">
             {socials
               .filter((s) => !!s.href)
               .map(({ href, Icon, label }) => (
@@ -95,12 +98,14 @@ export default function BranchCard({
                   target="_blank"
                   rel="noopener noreferrer"
                   aria-label={label}
-                  className="inline-flex h-15 w-15 items-center justify-center rounded-full 
-             bg-white text-black shadow-[0_1px_0_rgba(0,0,0,0.06)] 
-             ring-1 ring-black/10 transition 
-             hover:bg-red-500 hover:text-white"
+                  className="inline-flex h-11 w-11 md:h-14 md:w-14 items-center justify-center rounded-full
+                             bg-white text-black shadow-[0_1px_0_rgba(0,0,0,0.06)]
+                             ring-1 ring-black/10 transition
+                             hover:bg-red-500 hover:text-white
+                             focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-red-400"
                 >
-                  <Icon size={30} />
+                  <Icon className="md:hidden" size={22} />
+                  <Icon className="hidden md:block" size={28} />
                 </a>
               ))}
           </div>

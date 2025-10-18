@@ -42,12 +42,6 @@ export default function BranchesPage() {
                 <p className="text-black/80">
                   The interactive map is available on larger screens.
                 </p>
-                <Link
-                  href="/mapscene"
-                  className="mt-3 inline-block rounded-full bg-red-500 px-4 py-2 font-semibold text-white hover:bg-red-600 transition"
-                >
-                  Open Map
-                </Link>
               </div>
             </div>
           </section>
